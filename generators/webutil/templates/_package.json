@@ -1,6 +1,6 @@
 {
   "name": "<%= name %>",
-  "description": "",
+  "description": "This is a npm-package used as a development & build -environment for your Cubixx-WebPackage. It is not thought to be published - therfore the version-number keeps untouched.",
   "version": "0.0.0",
   "private": true,
   "engines": {

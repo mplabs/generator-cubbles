@@ -1,0 +1,6 @@
+{
+  "resources": [
+    "resources/my-resource.js"
+  ],
+  "dependencies": []
+}

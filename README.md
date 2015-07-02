@@ -23,7 +23,7 @@ It lets you easily create and customize Cubixx (custom) web packages via the com
 
 ## Available Generators
 * `yo cubixx`: Lists available generators.
-* `yo cubixx:webutil`: Sets up a new WebPackage for a WebUtil (aka WebResource), generating all the boilerplate you 
+*  `yo cubixx:webutil`: Sets up a new WebPackage for a WebUtil (aka WebResource), generating all the boilerplate you 
 need to get started.
 
 
