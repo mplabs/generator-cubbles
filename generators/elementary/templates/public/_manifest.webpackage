@@ -1,0 +1,18 @@
+{
+    "webpackageId": "<%= groupId %>.<%= name %>",
+    "name": "<%= name %>",
+    "groupId": "<%= groupId %>",
+    "version": "0.1.0-SNAPSHOT",
+    "modelVersion": "4.1.0",
+    "webpackageType": "<%= webPackageType %>",
+    "description": "<%= webPackageDescription %>",
+    "license": "MIT",
+    "homepage": "",
+    "keywords": [
+        "cubixx",
+        "resource"
+    ],
+    "authors": <%= webpackageAuthors %>,
+    "man": [
+    ]
+}

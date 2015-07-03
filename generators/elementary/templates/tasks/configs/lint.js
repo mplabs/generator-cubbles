@@ -3,7 +3,7 @@
 'use strict';
 
 module.exports.tasks = {
-    jshint: {  // exclude list defined in .jshintignore
+    jshint: { // exclude list defined in .jshintignore
         utils: {
             options: {
                 jshintrc: true
@@ -11,6 +11,14 @@ module.exports.tasks = {
             src: [
                 '*.js',
                 'tasks/**/*.js'
+            ]
+        },
+        client: {
+            options: {
+                jshintrc: true
+            },
+            src: [
+                '<%= param.src %>/**/*.js'
             ]
         }
     },
@@ -29,14 +37,17 @@ module.exports.tasks = {
                 '<%= param.src %>/**/*.js'
             ]
         }
-
     },
     jsonlint: {
         files: {
             src: [
                 'package.json',
-                'bower.json',
-                '<%= param.src %>/manifest.webpackage'
+                'upload-config.json',
+                '<%= param.src %>/manifest.webapp',
+                '<%= param.src %>/manifest.webpackage',
+                '<%= param.src %>/manifest.component',
+                '<%= param.src %>/manifest.cubx',
+                '<%= param.src %>/**/*.json'
             ]
         }
     },
@@ -45,7 +56,7 @@ module.exports.tasks = {
             csslintrc: '.csslintrc'
         },
         strict: { // attach exclude file with prefix '!', ex: ![path]/main.css
-            src: ['public/**/*.css', '!public/**/vendor/**/*.css']
+            src: ['public/**/*.css', '!public/**/vendor/**']
         }
     },
     sloc: {

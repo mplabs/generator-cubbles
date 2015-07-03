@@ -9,7 +9,6 @@ module.exports = function(grunt) {
 
     // Load all custom tasks
     grunt.loadTasks('tasks');
-
     // Load grunt configurations
     var options = {
         config: { // set default configs location
@@ -34,17 +33,31 @@ module.exports = function(grunt) {
         'welcome', 'availabletasks'
     ]);
 
+    // intemediate task to optimize resources
+    grunt.registerTask('optimize', [
+        'copy:build',
+        'useminPrepare',
+        'concat:generated',
+        'cssmin:generated',
+        'uglify:generated',
+        'htmlmin',
+        'usemin'
+    ]);
+
     grunt.registerTask('pack', 'Pack your files for distribution (internally used for deploy* tasks)', [
         'clean:dist',
-        'copy:dist'
-        //'clean:pack'
-        //'compress:pack' // pack as tar
+        'optimize',
+        'copy:static',
+        'copy:component',
+        'string-replace:crc_url',
+        'updateWebappManifest'
     ]);
 
     grunt.registerTask('deployLocal', 'Deploy WebPackage to Cubixx-Base at http://boot2docker.me', [
         'pack',
         'exec:deployLocal'
     ]);
+
     grunt.registerTask('deployIntegration', 'Deploy WebPackage to Cubixx-Base at https://webblebase.net', [
         'pack',
         'excec:deployIntegration'
@@ -52,9 +65,13 @@ module.exports = function(grunt) {
 
     grunt.registerTask('validateSources', 'validate js and css', [
         'jshint', 'jscs', 'jsonlint', 'csslint', 'sloc'
-    ]);
+        ]);
 
     grunt.registerTask('generateDocs', 'generate documentation', [
         'clean:docs', 'validateSources', 'jsdoc'
+    ]);
+
+    grunt.registerTask('updateWebappManifest', [
+        'package-param', 'json-replace:manifest.webapp'
     ]);
 };

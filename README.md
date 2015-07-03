@@ -8,6 +8,7 @@ It lets you easily create and customize Cubixx (custom) web packages via the com
 ## Features
 * Scaffolding Cubixx-WebPackages
 * Prompting for the most important config-values
+* Validation of user input values.
 
 
 ## Installation
@@ -19,19 +20,16 @@ It lets you easily create and customize Cubixx (custom) web packages via the com
 ## Scaffold a WebPackage
 
 1. Make a new directory and cd into it: `mkdir -p my-project && cd $_`
-2. Scaffold a new Cubixx-WebPackage: `yo cubixx:<webpackage-type>`
+2. Scaffold a new Cubixx-WebPackage: `yo cubixx:<generator>`
 
 ## Available Generators
 * `yo cubixx`: Lists available generators.
-*  `yo cubixx:webutil`: Sets up a new WebPackage for a WebUtil (aka WebResource), generating all the boilerplate you 
-need to get started.
-
-
-#### Options
-
-```
- none yet
-``` 
+* `yo cubixx:elementary`: Sets up a new WebPackage for a Elementary CubxPolymer -Component , generating all the boilerplate you need to get started.
+* `yo cubixx:webutil`: Sets up a new WebPackage for a WebUtil (aka WebResource), generating all the boilerplate you need to get started.
 
 ## License
 MIT <http://opensource.org/licenses/MIT>
+
+## Releases
+* Version 0.2 (2015-07-03): Extended Implementation of `cubixx:webutil` and `cubixx:elementary`
+* Version 0.1 (2015-07-01): Basic implementation of `cubixx:webutil`

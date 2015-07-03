@@ -1,0 +1,12 @@
+{
+    "resources": [
+        "./component/<%= name %>.html"
+    ],
+    "dependencies": [
+        {
+            "name": "cubxpolymer",
+            "groupId": "base.platform",
+            "version": "<%= cubxPolymerVersion %>"
+        }
+    ]
+}

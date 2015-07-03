@@ -10,15 +10,17 @@ module.exports = yeoman.generators.Base.extend({
         /**
          * regex definitions for input validation (note: use http://regexpal.com/ for testing)
          */
-        this.webpackagename_regex = /^([a-z0-9]+)(\-[a-z0-9]+)*$/;
+        this.webpackagename_regex = /^([a-z0-9]+)(\-[a-z0-9]+)+$/;
         this.groupid_regex = /^([a-z0-9]+)(\.[a-z0-9]+)*$/;
+        this.version_regex = /^(\d+)(\.[\d]+)*(-SNAPSHOT)?$/;
         // for the url-regex @see https://mathiasbynens.be/demo/url-regex
         this.url_regexByStephanhay = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
         this.email_regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-        //
+             //
         this.config.defaults({
-            webPackageType: 'webutil'
-        })
+            webPackageType: 'webcomponent'
+        });
+        var me = this;
     },
     constructor: function() {
         yeoman.generators.Base.apply(this, arguments);
@@ -49,11 +51,11 @@ module.exports = yeoman.generators.Base.extend({
                 message: 'WebPackage Name?',
                 default: this.appname,
                 validate: function(input) {
-                if (!this.webpackagename_regex.test(input)) {
-                    return "Please provide a value with a valid pattern (" + this.webpackagename_regex + ").";
-                }
-                return true;
-            }.bind(this)
+                    if (!this.webpackagename_regex.test(input)) {
+                        return "Please provide a value with a valid pattern (" + this.webpackagename_regex + ").";
+                    }
+                    return true;
+                }.bind(this)
             }, {
                 type: 'input',
                 name: 'groupId',
@@ -93,6 +95,50 @@ module.exports = yeoman.generators.Base.extend({
                 validate: function(input) {
                     if (input != 'none' && !this.url_regexByStephanhay.test(input)) {
                         return "Please provide a value with a valid pattern (" + this.url_regexByStephanhay + ").";
+                    }
+                    return true;
+                }.bind(this)
+            }, {
+                type: 'input',
+                name: 'cubxPolymerVersion',
+                message: 'Component: Which Version of CubixPolymer shall be refered to?',
+                default: '0.4',
+                validate: function(input) {
+                    if (!this.version_regex.test(input)) {
+                        return "Please provide a value with a valid pattern (" + this.version_regex + ").";
+                    }
+                    return true;
+                }.bind(this)
+            }, {
+                type: 'input',
+                name: 'crcLoaderVersion',
+                message: 'WebPackage/index.html: Which Version of CRC-Loader shall be refered to?',
+                default: '0.5',
+                validate: function(input) {
+                    if (!this.version_regex.test(input)) {
+                        return "Please provide a value with a valid pattern (" + this.version_regex + ").";
+                    }
+                    return true;
+                }.bind(this)
+            }, {
+                type: 'input',
+                name: 'crcVersion',
+                message: 'WebPackage/index.html: Which Version of CRC shall be refered to?',
+                default: '0.4',
+                validate: function(input) {
+                    if (!this.version_regex.test(input)) {
+                        return "Please provide a value with a valid pattern (" + this.version_regex + ").";
+                    }
+                    return true;
+                }.bind(this)
+            }, {
+                type: 'input',
+                name: 'cifVersion',
+                message: 'WebPackage/index.html: Which Version of CIF shall be refered to?',
+                default: '0.3',
+                validate: function(input) {
+                    if (!this.version_regex.test(input)) {
+                        return "Please provide a value with a valid pattern (" + this.version_regex + ").";
                     }
                     return true;
                 }.bind(this)
@@ -136,8 +182,8 @@ module.exports = yeoman.generators.Base.extend({
 
         webutil: function() {
             this.fs.copyTpl(
-                this.templatePath('public/_manifest.webpackage'),
-                this.destinationPath('public/manifest.webpackage'),
+                this.templatePath('_README.md'),
+                this.destinationPath('README.md'),
                 this.props
             );
             this.fs.copyTpl(
@@ -147,10 +193,46 @@ module.exports = yeoman.generators.Base.extend({
                 }
             );
             this.fs.copyTpl(
-                this.templatePath('_README.md'),
-                this.destinationPath('README.md'),
+                this.templatePath('public/_index.html'),
+                this.destinationPath('public/index.html'),
                 this.props
             );
+            this.fs.copyTpl(
+                this.templatePath('public/_manifest.webpackage'),
+                this.destinationPath('public/manifest.webpackage'),
+                this.props
+            );
+            this.fs.copyTpl(
+                this.templatePath('public/_manifest.webapp'),
+                this.destinationPath('public/manifest.webapp'),
+                this.props
+            );
+            this.fs.copyTpl(
+                this.templatePath('public/_manifest.cubx'),
+                this.destinationPath('public/manifest.cubx'),
+                this.props
+            );
+            this.fs.copyTpl(
+                this.templatePath('public/_dependency.json'),
+                this.destinationPath('public/dependency.json'),
+                this.props
+            );
+            this.fs.copyTpl(
+                this.templatePath('public/component/_cubx-component-template.html'),
+                this.destinationPath('public/component/' + this.appname + '.html'),
+                this.props
+            );
+            this.fs.copyTpl(
+                this.templatePath('public/component/_cubx-component-template.js'),
+                this.destinationPath('public/component/' + this.appname + '.js'),
+                this.props
+            );
+            this.fs.copyTpl(
+                this.templatePath('public/component/_cubx-component-template.css'),
+                this.destinationPath('public/component/' + this.appname + '.css'),
+                this.props
+            );
+
             /** Now copy all the other stuff.
              * @see https://github.com/isaacs/node-glob#options
              */
