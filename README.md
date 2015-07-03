@@ -31,5 +31,5 @@ It lets you easily create and customize Cubixx (custom) web packages via the com
 MIT <http://opensource.org/licenses/MIT>
 
 ## Releases
-* Version 0.2 (2015-07-03): Extended Implementation of `cubixx:webutil` and `cubixx:elementary`
-* Version 0.1 (2015-07-01): Basic implementation of `cubixx:webutil`
+* Version 0.2.0 (2015-07-03): Extended `cubixx:webutil` | New `cubixx:elementary`
+* Version 0.1.0 (2015-07-01): Basic implementation of `cubixx:webutil`
