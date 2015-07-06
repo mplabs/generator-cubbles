@@ -10,7 +10,7 @@
     "homepage": "",
     "keywords": [
         "cubixx",
-        "resource"
+        "webutil"
     ],
     "authors": <%= webpackageAuthors %>,
     "man": [
