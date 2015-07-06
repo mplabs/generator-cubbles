@@ -2,12 +2,12 @@
 /*global module */
 'use strict';
 
-module.exports.tasks = {
+module.exports.git = {
     availabletasks: {
         tasks: {
             options: {
                 filter: 'include',
-                tasks: ['pack', 'deployLocal', 'deployIntegration', 'generateDoc', 'validateSources', 'initGit']
+                tasks: ['pack', 'deployLocal', 'deployIntegration', 'generateDoc', 'validateSources']
             }
         }
     }
