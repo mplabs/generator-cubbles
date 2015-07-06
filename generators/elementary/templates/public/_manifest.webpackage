@@ -10,7 +10,7 @@
     "homepage": "",
     "keywords": [
         "cubixx",
-        "resource"
+        "elementary"
     ],
     "authors": <%= webpackageAuthors %>,
     "man": [
