@@ -16,7 +16,7 @@ module.exports = yeoman.generators.Base.extend({
         // for the url-regex @see https://mathiasbynens.be/demo/url-regex
         this.url_regexByStephanhay = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
         this.email_regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-             //
+        //
         this.config.defaults({
             webPackageType: 'webcomponent'
         });
@@ -97,6 +97,12 @@ module.exports = yeoman.generators.Base.extend({
                     }
                     return true;
                 }.bind(this)
+            }, {
+                type: 'list',
+                name: 'devBaseUrl',
+                message: 'index.html: From which Cubixx-Base do you want to load dependencies (at development time)?',
+                choices: ["https://webblebase.net", "http://boot2docker.me"],
+                default: 0
             }, {
                 type: 'input',
                 name: 'crcLoaderVersion',
@@ -227,6 +233,7 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     install: function() {
+        this.log('\nRunning npm install ...');
         this.npmInstall();
     },
 
@@ -236,7 +243,7 @@ module.exports = yeoman.generators.Base.extend({
         ));
         this.log(
             'Next:\n' +
-            '1) Put your resources into the \'public/resources\' -folder\n' +
+            '1) Put your resources into the \'public/component\' -folder\n' +
             '2) Update the \'dependency.json\' with\n' +
             '   * the local resources and\n' +
             '   * (optionally) dependencies to other webpackages.\n' +

@@ -6,10 +6,11 @@ var yosay = require('yosay');
 module.exports = yeoman.generators.Base.extend({
 
     initializing: function() {
-        this.appname = this.appname.toLowerCase().replace(/\s+/g, '-');
+        this.webapackageName = this.appname.toLowerCase().replace(/\s+/g, '-');
         /**
          * regex definitions for input validation (note: use http://regexpal.com/ for testing)
          */
+        this.webappname_regex = /^([A-Za-z0-9 ]+)(\-[A-Za-z0-9 ]+)*$/;
         this.webpackagename_regex = /^([a-z0-9]+)(\-[a-z0-9]+)+$/;
         this.groupid_regex = /^([a-z0-9]+)(\.[a-z0-9]+)*$/;
         this.version_regex = /^(\d+)(\.[\d]+)*(-SNAPSHOT)?$/;
@@ -18,7 +19,7 @@ module.exports = yeoman.generators.Base.extend({
         this.email_regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
         //
         this.config.defaults({
-            webPackageType: 'webcomponent'
+            webPackageType: 'webapp'
         });
     },
     constructor: function() {
@@ -46,9 +47,20 @@ module.exports = yeoman.generators.Base.extend({
         var prompts = [
             {
                 type: 'input',
+                name: 'webappname',
+                message: 'WebApplication Name?',
+                default: this.appname,
+                validate: function(input) {
+                    if (!this.webappname_regex.test(input)) {
+                        return "Please provide a value with a valid pattern (" + this.webappname_regex + ").";
+                    }
+                    return true;
+                }.bind(this)
+            }, {
+                type: 'input',
                 name: 'name',
                 message: 'WebPackage Name?',
-                default: this.appname,
+                default: this.webapackageName,
                 validate: function(input) {
                     if (!this.webpackagename_regex.test(input)) {
                         return "Please provide a value with a valid pattern (" + this.webpackagename_regex + ").";
@@ -98,26 +110,15 @@ module.exports = yeoman.generators.Base.extend({
                     return true;
                 }.bind(this)
             }, {
-                type: 'input',
-                name: 'cubxPolymerVersion',
-                message: 'Component: Which Version of CubixPolymer shall be refered to?',
-                default: '0.4',
-                validate: function(input) {
-                    if (!this.version_regex.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.version_regex + ").";
-                    }
-                    return true;
-                }.bind(this)
-            }, {
                 type: 'list',
                 name: 'devBaseUrl',
-                message: 'WebPackage/index.html: From which Cubixx-Base do you want to load dependencies (at development time)?',
+                message: 'index.html: From which Cubixx-Base do you want to load dependencies (at development time)?',
                 choices: ["https://webblebase.net", "http://boot2docker.me"],
                 default: 0
             }, {
                 type: 'input',
                 name: 'crcLoaderVersion',
-                message: 'WebPackage/index.html: Which Version of CRC-Loader shall be refered to?',
+                message: 'index.html: Which Version of CRC-Loader shall be refered to?',
                 default: '0.5',
                 validate: function(input) {
                     if (!this.version_regex.test(input)) {
@@ -128,7 +129,7 @@ module.exports = yeoman.generators.Base.extend({
             }, {
                 type: 'input',
                 name: 'crcVersion',
-                message: 'WebPackage/index.html: Which Version of CRC shall be refered to?',
+                message: 'manifest.cubx: Which Version of CRC shall be refered to?',
                 default: '0.4',
                 validate: function(input) {
                     if (!this.version_regex.test(input)) {
@@ -139,7 +140,7 @@ module.exports = yeoman.generators.Base.extend({
             }, {
                 type: 'input',
                 name: 'cifVersion',
-                message: 'WebPackage/index.html: Which Version of CIF shall be refered to?',
+                message: 'manifest.cubx: Which Version of CIF shall be refered to?',
                 default: '0.3',
                 validate: function(input) {
                     if (!this.version_regex.test(input)) {
@@ -222,21 +223,6 @@ module.exports = yeoman.generators.Base.extend({
                 this.destinationPath('public/dependency.json'),
                 this.props
             );
-            this.fs.copyTpl(
-                this.templatePath('public/component/_cubx-component-template.html'),
-                this.destinationPath('public/component/' + this.appname + '.html'),
-                this.props
-            );
-            this.fs.copyTpl(
-                this.templatePath('public/component/_cubx-component-template.js'),
-                this.destinationPath('public/component/' + this.appname + '.js'),
-                this.props
-            );
-            this.fs.copyTpl(
-                this.templatePath('public/component/_cubx-component-template.css'),
-                this.destinationPath('public/component/' + this.appname + '.css'),
-                this.props
-            );
 
             /** Now copy all the other stuff.
              * @see https://github.com/isaacs/node-glob#options
@@ -264,7 +250,7 @@ module.exports = yeoman.generators.Base.extend({
         ));
         this.log(
             'Next:\n' +
-            '1) Put your resources into the \'public/component\' -folder\n' +
+            '1) Put your resources into the \'public/resources\' -folder\n' +
             '2) Update the \'dependency.json\' with\n' +
             '   * the local resources and\n' +
             '   * (optionally) dependencies to other webpackages.\n' +

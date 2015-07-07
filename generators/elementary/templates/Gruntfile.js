@@ -68,7 +68,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('validateSources', 'validate js and css', [
         'jshint', 'jscs', 'jsonlint', 'csslint', 'sloc'
-        ]);
+    ]);
 
     grunt.registerTask('generateDocs', 'generate documentation', [
         'clean:docs', 'validateSources', 'jsdoc'
@@ -79,8 +79,11 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask('initGit', 'Explains how to setup a git repo for this webpackage.', function() {
-        grunt.log.writeln('\n' + 'We don`t find it usesful to automate this for you - but here is what you need to do:');
-        grunt.log.writeln(chalk.green('$ git init') + ' //use \'--template <path>\' to use a git template of your choice');
-        grunt.log.writeln(chalk.green('$ git remote set-url origin <url>')  + ' //e.g. with url=https://pmt.incowia.de/webble/r/~<username>/webpackages/' + webPackageName + '.git');
+        grunt.log.writeln('\n' +
+            'We don`t find it usesful to automate this for you - but here is what you need to do:');
+        grunt.log.writeln(chalk.green('$ git init') +
+            ' //use \'--template <path>\' to use a git template of your choice');
+        grunt.log.writeln(chalk.green('$ git remote set-url origin <url>') +
+            ' //e.g. with url=https://pmt.incowia.de/webble/r/~<username>/webpackages/' + webPackageName + '.git');
     });
 };

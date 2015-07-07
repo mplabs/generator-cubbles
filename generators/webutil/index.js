@@ -167,6 +167,7 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     install: function() {
+        this.log('\nRunning npm install ...');
         this.npmInstall();
     },
 
