@@ -23,12 +23,16 @@ It lets you easily create and customize Cubixx (custom) web packages via the com
 
 ## Available Generators
 * `yo cubixx`: Lists available generators.
-* `yo cubixx:elementary`: Sets up a new WebPackage for a Elementary CubxPolymer -Component , generating all the boilerplate you need to get started.
-* `yo cubixx:webutil`: Sets up a new WebPackage for a WebUtil (aka WebResource), generating all the boilerplate you need to get started.
+* `yo cubixx:webapp`: Sets up a new WebPackage for a WebApplication , generating all the boilerplate you need to get started.
+* `yo cubixx:compound`: Sets up a new WebPackage for a CompoundComponent.
+* `yo cubixx:elementary`: Sets up a new WebPackage for a Elementary CubxPolymer -Component.
+* `yo cubixx:webutil`: Sets up a new WebPackage for a WebUtil (aka WebResource).
 
 ## License
 MIT <http://opensource.org/licenses/MIT>
 
 ## Releases
+* Version 0.3.1 (2015-07-07): Fixed some spelling issues.
+* Version 0.3.0 (2015-07-07): New `cubixx:compound` | New `cubixx:webapp`
 * Version 0.2.0 (2015-07-03): Extended `cubixx:webutil` | New `cubixx:elementary`
 * Version 0.1.0 (2015-07-01): Basic implementation of `cubixx:webutil`
