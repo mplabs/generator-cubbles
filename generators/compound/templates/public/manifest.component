@@ -1,4 +1,7 @@
 {
+  "type": "compound",
+  "slots": [
+  ],
   "member": [
   ],
   "connections": [
