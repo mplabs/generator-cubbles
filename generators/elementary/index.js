@@ -6,8 +6,7 @@ var yosay = require('yosay');
 module.exports = yeoman.generators.Base.extend({
 
     initializing: function() {
-        this.appname = this.appname.toLowerCase().replace(/\s+/g, '-');
-        /**
+         /**
          * regex definitions for input validation (note: use http://regexpal.com/ for testing)
          */
         this.webpackagename_regex = /^([a-z0-9]+)(\-[a-z0-9]+)+$/;
@@ -48,7 +47,7 @@ module.exports = yeoman.generators.Base.extend({
                 type: 'input',
                 name: 'name',
                 message: 'WebPackage Name?',
-                default: this.appname,
+                default: (function() {return this.appname.toLowerCase().replace(/\s+/g, '-')}).bind(this),
                 validate: function(input) {
                     if (!this.webpackagename_regex.test(input)) {
                         return "Please provide a value with a valid pattern (" + this.webpackagename_regex + ").";
@@ -224,17 +223,17 @@ module.exports = yeoman.generators.Base.extend({
             );
             this.fs.copyTpl(
                 this.templatePath('public/component/_cubx-component-template.html'),
-                this.destinationPath('public/component/' + this.appname + '.html'),
+                this.destinationPath('public/component/' + this.config.name + '.html'),
                 this.props
             );
             this.fs.copyTpl(
                 this.templatePath('public/component/_cubx-component-template.js'),
-                this.destinationPath('public/component/' + this.appname + '.js'),
+                this.destinationPath('public/component/' + this.config.name + '.js'),
                 this.props
             );
             this.fs.copyTpl(
                 this.templatePath('public/component/_cubx-component-template.css'),
-                this.destinationPath('public/component/' + this.appname + '.css'),
+                this.destinationPath('public/component/' + this.config.name + '.css'),
                 this.props
             );
 
