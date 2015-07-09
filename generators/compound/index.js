@@ -12,7 +12,7 @@ module.exports = yeoman.generators.Base.extend({
         this.webpackagename_regex = /^([a-z0-9]+)(\-[a-z0-9]+)+$/;
         this.groupid_regex = /^([a-z0-9]+)(\.[a-z0-9]+)*$/;
         this.version_regex = /^(\d+)(\.[\d]+)*(-SNAPSHOT)?$/;
-        //this.peopleName_regex = /^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?\s)+([A-Za-z]+[\-\']?)*([A-Za-z]+)?$/;
+        this.peopleName_regex = /^(([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?\s)+([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?$/;
         // for the url-regex @see https://mathiasbynens.be/demo/url-regex
         this.url_regexByStephanhay = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
         this.email_regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -74,7 +74,13 @@ module.exports = yeoman.generators.Base.extend({
                 type: 'input',
                 name: 'webPackageAuthorName',
                 message: 'WebPackage Author\'s Name?',
-                store: true
+                store: true,
+                validate: function(input) {
+                    if (!this.peopleName_regex.test(input)) {
+                        return "Please provide a value with a valid pattern (" + this.peopleName_regex + ").";
+                    }
+                    return true;
+                }.bind(this)
             }, {
                 type: 'input',
                 name: 'webPackageAuthorEMail',
