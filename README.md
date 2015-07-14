@@ -32,6 +32,7 @@ It lets you easily create and customize Cubixx (custom) web packages via the com
 MIT <http://opensource.org/licenses/MIT>
 
 ## Releases
+* Version 0.3.3 (2015-07-14): Fixed PLAT-208 (cubixx:elementary).
 * Version 0.3.2 (2015-07-09): Fixed some generation and regex issues.
 * Version 0.3.1 (2015-07-07): Fixed some spelling issues.
 * Version 0.3.0 (2015-07-07): New `cubixx:compound` | New `cubixx:webapp`
