@@ -230,17 +230,17 @@ module.exports = yeoman.generators.Base.extend({
             );
             this.fs.copyTpl(
                 this.templatePath('public/component/_cubx-component-template.html'),
-                this.destinationPath('public/component/' + this.config.name + '.html'),
+                this.destinationPath('public/component/' + this.props.name + '.html'),
                 this.props
             );
             this.fs.copyTpl(
                 this.templatePath('public/component/_cubx-component-template.js'),
-                this.destinationPath('public/component/' + this.config.name + '.js'),
+                this.destinationPath('public/component/' + this.props.name + '.js'),
                 this.props
             );
             this.fs.copyTpl(
                 this.templatePath('public/component/_cubx-component-template.css'),
-                this.destinationPath('public/component/' + this.config.name + '.css'),
+                this.destinationPath('public/component/' + this.props.name + '.css'),
                 this.props
             );
 
