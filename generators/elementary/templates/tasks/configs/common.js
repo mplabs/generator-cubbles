@@ -147,7 +147,7 @@ module.exports.tasks = {
         tests: ['<%= param.dst %>/test']
     },
     jsdoc: {
-        src: ['<%= param.src %>/js/*.js', 'README.md'],
+        src: ['<%= param.src %>/**/*.js', 'README.md'],
         options: {
             destination: 'docs',
             template: 'node_modules/grunt-jsdoc/node_modules/ink-docstrap/template',

@@ -50,7 +50,7 @@ module.exports = function(grunt) {
     ]);
     grunt.registerTask('deployIntegration', 'Deploy WebPackage to Cubixx-Base at https://webblebase.net', [
         'pack',
-        'excec:deployIntegration'
+        'exec:deployIntegration'
     ]);
 
     grunt.registerTask('validateSources', 'validate js and css', [
