@@ -32,6 +32,7 @@ It lets you easily create and customize Cubixx (custom) web packages via the com
 MIT <http://opensource.org/licenses/MIT>
 
 ## Releases
+* Version 0.3.5 (2015-07-16): Fixed PLAT-214 (grunt deployIntegration), PLAT-215 (missing .gitignore File).
 * Version 0.3.4 (2015-07-14): Fixed PLAT-208 (cubixx:compound).
 * Version 0.3.3 (2015-07-14): Fixed PLAT-208 (cubixx:elementary).
 * Version 0.3.2 (2015-07-09): Fixed some generation and regex issues.

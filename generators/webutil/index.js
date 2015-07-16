@@ -18,7 +18,7 @@ module.exports = yeoman.generators.Base.extend({
         this.email_regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
         //
         this.config.defaults({
-            webPackageType: 'webutil'
+            webPackageType: 'webresource'
         })
     },
     constructor: function() {
@@ -158,6 +158,11 @@ module.exports = yeoman.generators.Base.extend({
                 this.destinationPath('README.md'),
                 this.props
             );
+            this.fs.copyTpl(
+                this.templatePath('_.gitignore'),
+                this.destinationPath('.gitignore'),
+                this.props
+            );
             /** Now copy all the other stuff.
              * @see https://github.com/isaacs/node-glob#options
              */
@@ -166,7 +171,7 @@ module.exports = yeoman.generators.Base.extend({
                 this.destinationRoot(), {
                     globOptions: {
                         dot: true,
-                        ignore: ['**/_**', '**/git-template/**']
+                        ignore: ['**/_**']
                     }
                 }
             );

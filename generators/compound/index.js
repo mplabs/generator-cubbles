@@ -193,6 +193,11 @@ module.exports = yeoman.generators.Base.extend({
                 }
             );
             this.fs.copyTpl(
+                this.templatePath('_.gitignore'),
+                this.destinationPath('.gitignore'),
+                this.props
+            );
+            this.fs.copyTpl(
                 this.templatePath('public/_index.html'),
                 this.destinationPath('public/index.html'),
                 this.props
@@ -231,7 +236,7 @@ module.exports = yeoman.generators.Base.extend({
                 this.destinationRoot(), {
                     globOptions: {
                         dot: true,
-                        ignore: ['**/_**', '**/git-template/**']
+                        ignore: ['**/_**']
                     }
                 }
             );

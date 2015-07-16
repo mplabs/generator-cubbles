@@ -206,6 +206,11 @@ module.exports = yeoman.generators.Base.extend({
                 }
             );
             this.fs.copyTpl(
+                this.templatePath('_.gitignore'),
+                this.destinationPath('.gitignore'),
+                this.props
+            );
+            this.fs.copyTpl(
                 this.templatePath('public/_index.html'),
                 this.destinationPath('public/index.html'),
                 this.props
@@ -231,6 +236,7 @@ module.exports = yeoman.generators.Base.extend({
                 this.props
             );
 
+
             /** Now copy all the other stuff.
              * @see https://github.com/isaacs/node-glob#options
              */
@@ -239,7 +245,7 @@ module.exports = yeoman.generators.Base.extend({
                 this.destinationRoot(), {
                     globOptions: {
                         dot: true,
-                        ignore: ['**/_**', '**/git-template/**']
+                        ignore: ['**/_**']
                     }
                 }
             );
