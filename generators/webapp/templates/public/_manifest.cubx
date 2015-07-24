@@ -1,6 +1,10 @@
 {
-    "crcId": "crc-<%= crcVersion %>",
-    "cifId": "cif-core-<%= cifVersion %>",
+    "crc": {
+        "id": "crc-<%= crcVersion %>"
+    },
+    "cif": {
+      "id" :   "cif-core-<%= cifVersion %>"
+    },
     "runtimeMode": "dev"
 }
 

@@ -113,7 +113,7 @@ module.exports = yeoman.generators.Base.extend({
                 type: 'input',
                 name: 'crcLoaderVersion',
                 message: 'WebPackage/index.html: Which Version of CRC-Loader shall be refered to?',
-                default: '0.5',
+                default: '0.6',
                 validate: function(input) {
                     if (!this.version_regex.test(input)) {
                         return "Please provide a value with a valid pattern (" + this.version_regex + ").";
@@ -124,7 +124,7 @@ module.exports = yeoman.generators.Base.extend({
                 type: 'input',
                 name: 'crcVersion',
                 message: 'WebPackage/index.html: Which Version of CRC shall be refered to?',
-                default: '0.4',
+                default: '0.5',
                 validate: function(input) {
                     if (!this.version_regex.test(input)) {
                         return "Please provide a value with a valid pattern (" + this.version_regex + ").";
@@ -135,7 +135,7 @@ module.exports = yeoman.generators.Base.extend({
                 type: 'input',
                 name: 'cifVersion',
                 message: 'WebPackage/index.html: Which Version of CIF shall be refered to?',
-                default: '0.3',
+                default: '0.4',
                 validate: function(input) {
                     if (!this.version_regex.test(input)) {
                         return "Please provide a value with a valid pattern (" + this.version_regex + ").";
