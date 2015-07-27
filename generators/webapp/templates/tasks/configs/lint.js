@@ -73,7 +73,7 @@ module.exports.tasks = {
     },
     githooks: {
         all: {
-            'pre-commit': 'lint'
+            'pre-commit': 'validateSources'
         }
     }
 };

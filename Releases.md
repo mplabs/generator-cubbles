@@ -1,5 +1,11 @@
 # Releases:
 
+
+## Version 0.4.1 (2015-07-27)
+### BugFix
+* Korrektur Einbindung CRCLoader ( der script-Tag in index.html, cubx.core eingefügt.)
+* Korrektur githooks grunt-Task (Task `lint` wurde in `validateSources` umbenannt
+
 ## Version 0.4 (2015-07-24)
 ### Improvement
 * ready for modelVersion 5.0.0  
