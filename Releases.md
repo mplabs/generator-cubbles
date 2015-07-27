@@ -1,6 +1,10 @@
 # Releases:
 
 
+## Version 0.4.2 (2015-07-27)
+### BugFix
+* Korrektur CRCLoader Version auf 0.6.1
+
 ## Version 0.4.1 (2015-07-27)
 ### BugFix
 * Korrektur Einbindung CRCLoader ( der script-Tag in index.html, cubx.core eingefügt.)
