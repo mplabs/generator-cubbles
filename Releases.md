@@ -1,5 +1,8 @@
 # Releases:
 
+## Version 0.4.3 (2015-07-28)
+### BugFix
+* bei Generierung eines webapps wird keine manifest.component benötigt, es wurde entfernt. ( manifest.component hatte falsche (alte) Inhalt )
 
 ## Version 0.4.2 (2015-07-27)
 ### BugFix
