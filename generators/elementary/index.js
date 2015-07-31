@@ -107,7 +107,7 @@ module.exports = yeoman.generators.Base.extend({
                 type: 'input',
                 name: 'cubxPolymerVersion',
                 message: 'Component: Which Version of CubixPolymer shall be refered to?',
-                default: '0.5',
+                default: '0.6.1',
                 validate: function(input) {
                     if (!this.version_regex.test(input)) {
                         return "Please provide a value with a valid pattern (" + this.version_regex + ").";
