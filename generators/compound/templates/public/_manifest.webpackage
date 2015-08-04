@@ -1,9 +1,9 @@
 {
-    "webpackageId": "<%= groupId %>.<%= name %>",
+
     "name": "<%= name %>",
     "groupId": "<%= groupId %>",
     "version": "0.1.0-SNAPSHOT",
-    "modelVersion": "5.0.0",
+    "modelVersion": "6.0.0",
     "webpackageType": "<%= webPackageType %>",
     "description": "<%= webPackageDescription %>",
     "license": "MIT",

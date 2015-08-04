@@ -1,9 +1,9 @@
 {
     "crc": {
-        "id": "crc-<%= crcVersion %>"
+        "id": "cubx.core.crc-<%= crcVersion %>"
     },
     "cif": {
-        "id" :   "cif-core-<%= cifVersion %>"
+        "id" :   "cubx.core.cif-<%= cifVersion %>"
     },
     "runtimeMode": "dev"
 }

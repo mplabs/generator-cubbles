@@ -9,8 +9,8 @@ module.exports = yeoman.generators.Base.extend({
          /**
          * regex definitions for input validation (note: use http://regexpal.com/ for testing)
          */
-        this.webpackagename_regex = /^([a-z0-9]+)(\-[a-z0-9]+)+$/;
-        this.groupid_regex = /^([a-z0-9]+)(\.[a-z0-9]+)*$/;
+        this.webpackagename_regex = /^([a-z][a-z0-9]*)(\-[a-z0-9]+)+$/;
+        this.groupid_regex = /^([a-z0-9_-]+)(\.[a-z0-9_-]+)*$/;
         this.version_regex = /^(\d+)(\.[\d]+)*(-SNAPSHOT)?$/;
         this.peopleName_regex = /^(([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?\s)+([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?$/;
         // for the url-regex @see https://mathiasbynens.be/demo/url-regex
@@ -106,14 +106,14 @@ module.exports = yeoman.generators.Base.extend({
             }, {
                 type: 'list',
                 name: 'devBaseUrl',
-                message: 'index.html: From which Cubixx-Base do you want to load dependencies (at development time)?',
+                message: 'WebPackage/index.html: From which Cubixx-Base do you want to load dependencies (at development time)?',
                 choices: ["https://webblebase.net", "http://boot2docker.me"],
                 default: 0
             }, {
                 type: 'input',
                 name: 'crcLoaderVersion',
                 message: 'WebPackage/index.html: Which Version of CRC-Loader shall be refered to?',
-                default: '0.6.1',
+                default: '1.0',
                 validate: function(input) {
                     if (!this.version_regex.test(input)) {
                         return "Please provide a value with a valid pattern (" + this.version_regex + ").";
@@ -124,7 +124,7 @@ module.exports = yeoman.generators.Base.extend({
                 type: 'input',
                 name: 'crcVersion',
                 message: 'WebPackage/index.html: Which Version of CRC shall be refered to?',
-                default: '0.5',
+                default: '1.0',
                 validate: function(input) {
                     if (!this.version_regex.test(input)) {
                         return "Please provide a value with a valid pattern (" + this.version_regex + ").";
@@ -135,7 +135,7 @@ module.exports = yeoman.generators.Base.extend({
                 type: 'input',
                 name: 'cifVersion',
                 message: 'WebPackage/index.html: Which Version of CIF shall be refered to?',
-                default: '0.4',
+                default: '1.0',
                 validate: function(input) {
                     if (!this.version_regex.test(input)) {
                         return "Please provide a value with a valid pattern (" + this.version_regex + ").";

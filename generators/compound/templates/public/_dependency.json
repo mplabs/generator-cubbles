@@ -2,8 +2,5 @@
   "resources": [
     "./component/<%= name %>.css"
   ],
-  "dependencies": [
-    {
-    }
-  ]
+  "dependencies": []
 }

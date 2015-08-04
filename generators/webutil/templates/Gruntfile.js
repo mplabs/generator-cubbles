@@ -61,6 +61,9 @@ module.exports = function(grunt) {
         'clean:docs', 'validateSources', 'jsdoc'
     ]);
 
+    grunt.registerTask('validate', 'validate sources and webpackage',
+        ['validateSources', 'pack', 'exec:validateWebpackage']);
+
     grunt.registerTask('initGit', 'Explains how to setup a git repo for this webpackage.', function() {
         grunt.log.writeln('\n' +
             'We don`t find it useful to automate this for you - but here is what you need to do:');

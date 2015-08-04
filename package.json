@@ -1,6 +1,6 @@
 {
   "name": "generator-cubixx",
-  "version": "0.4.3",
+  "version": "0.5.0",
   "description": "Yeoman generator for Cubixx-WebPackages",
   "license": "MIT",
   "main": "app/index.js",
@@ -8,6 +8,10 @@
   "author": {
     "name": "Hd Böhlau",
     "email": "hans-dieter.boehlau@incowia.com"
+  },
+  "contributors": {
+    "name": "Judit Ross",
+    "email": "judit.rossn@incowia.com"
   },
   "publishConfig": {
     "registry": "https://npm.webblebase.net:444"
@@ -28,5 +32,8 @@
   },
   "devDependencies": {
     "mocha": "*"
+  },
+  "scripts": {
+    "preinstall": "npm install -g https://npm.webblebase.net:444/webpackage-uploader/-/webpackage-uploader-1.2.2.tgz"
   }
 }

@@ -4,9 +4,7 @@
     ],
     "dependencies": [
         {
-            "name": "cubxpolymer",
-            "groupId": "base.platform",
-            "version": "<%= cubxPolymerVersion %>"
+            "id" : "cubx.core.cubxpolymer-<%= cubxPolymerVersion %>"
         }
     ]
 }

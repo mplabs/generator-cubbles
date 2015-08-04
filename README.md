@@ -16,6 +16,8 @@ It lets you easily create and customize Cubixx (custom) web packages via the com
 1. The Yeoman package. Install it if it is not already on your system: `npm install -g yo`
 2. Install the Yeoman generator for Cubixx-WebPackages: `npm install -g https://npm.webblebase.net:444/generator-cubixx/-/generator-cubixx-<version>.tgz`
 
+-> _**NOTE**: the preinstall script of cubixx-generator will install the webpackage-uploader globally._
+
 ## Scaffold a WebPackage
 
 1. Make a new directory and cd into it: `mkdir -p my-project && cd $_`

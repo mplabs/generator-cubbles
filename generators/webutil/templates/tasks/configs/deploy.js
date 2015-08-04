@@ -9,6 +9,9 @@ module.exports.tasks = {
         },
         deployIntegration: {
             cmd: 'webpackage-uploader tasks/configs/deployIntegration-config.json'
+        },
+        validateWebpackage: {
+            cmd: 'validate-webpackage tasks/configs/deployIntegration-config.json'
         }
     }
 };

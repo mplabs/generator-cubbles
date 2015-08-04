@@ -53,7 +53,9 @@ module.exports = function(grunt) {
         'copy:static',
         'copy:component',
         'string-replace:crc_url',
-        'updateWebappManifest'
+        'updateWebappManifest',
+        'find-in-script-tag:index.html',
+        'find-in-json:manifest.cubx'
     ]);
 
     grunt.registerTask('deployLocal', 'Deploy WebPackage to Cubixx-Base at http://boot2docker.me', [
@@ -77,6 +79,9 @@ module.exports = function(grunt) {
     grunt.registerTask('updateWebappManifest', [
         'package-param', 'json-replace:manifest.webapp'
     ]);
+
+    grunt.registerTask('validate', 'validate sources and webpackage',
+        ['validateSources', 'pack', 'exec:validateWebpackage']);
 
     grunt.registerTask('initGit', 'Explains how to setup a git repo for this webpackage.', function() {
         grunt.log.writeln('\n' +

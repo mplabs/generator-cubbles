@@ -12,7 +12,7 @@ module.exports = yeoman.generators.Base.extend({
          */
         this.webpackagename_regex = /^([a-z0-9]+)(\-[a-z0-9]+)+$/;
         this.webappname_regex = /^([A-Za-z0-9 ]+)(\-[A-Za-z0-9 ]+)*$/;
-        this.groupid_regex = /^([a-z0-9]+)(\.[a-z0-9]+)*$/;
+        this.groupid_regex = /^([a-z0-9-_]+)(\.[a-z0-9-_]+)*$/;
         this.version_regex = /^(\d+)(\.[\d]+)*(-SNAPSHOT)?$/;
         this.peopleName_regex = /^(([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?\s)+([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?$/;
         // for the url-regex @see https://mathiasbynens.be/demo/url-regex
@@ -126,7 +126,7 @@ module.exports = yeoman.generators.Base.extend({
                 type: 'input',
                 name: 'crcLoaderVersion',
                 message: 'index.html: Which Version of CRC-Loader shall be refered to?',
-                default: '0.6.1',
+                default: '1.0',
                 validate: function(input) {
                     if (!this.version_regex.test(input)) {
                         return "Please provide a value with a valid pattern (" + this.version_regex + ").";
@@ -137,7 +137,7 @@ module.exports = yeoman.generators.Base.extend({
                 type: 'input',
                 name: 'crcVersion',
                 message: 'manifest.cubx: Which Version of CRC shall be refered to?',
-                default: '0.5',
+                default: '1.0',
                 validate: function(input) {
                     if (!this.version_regex.test(input)) {
                         return "Please provide a value with a valid pattern (" + this.version_regex + ").";
@@ -148,7 +148,7 @@ module.exports = yeoman.generators.Base.extend({
                 type: 'input',
                 name: 'cifVersion',
                 message: 'manifest.cubx: Which Version of CIF shall be refered to?',
-                default: '0.4',
+                default: '1.0',
                 validate: function(input) {
                     if (!this.version_regex.test(input)) {
                         return "Please provide a value with a valid pattern (" + this.version_regex + ").";
