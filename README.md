@@ -34,4 +34,4 @@ It lets you easily create and customize Cubixx (custom) web packages via the com
 MIT <http://opensource.org/licenses/MIT>
 
 ## Releases
-siehe [[Relases.md]]
+siehe [[Releases.md]]
