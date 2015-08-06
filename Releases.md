@@ -1,5 +1,9 @@
 # Releases:
 
+## Version 0.6 (2015-08-06)
+## Change
+* PLAT-198: default version for crc (1.1) ,crcLoader (1.1) cif (1.1) and CubxPolymer (1.1) updated. (cubixx:compound, cubixx:elementary, cubixx:palt 
+
 ## Version 0.5 (2015-08-04)
 ## Improvement
 * modelVersion 6.0 included, defailt-values CRCLoader, CRC, CIF, CubxPolymer updated (cubixx:webapp, cubixx:compound, cubixx:elementary, cubixx:webutil)
