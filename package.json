@@ -11,7 +11,7 @@
   },
   "contributors": {
     "name": "Judit Ross",
-    "email": "judit.rossn@incowia.com"
+    "email": "judit.ross@incowia.com"
   },
   "publishConfig": {
     "registry": "https://npm.webblebase.net:444"
