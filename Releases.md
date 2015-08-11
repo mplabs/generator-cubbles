@@ -1,8 +1,14 @@
 # Releases:
 
+## Version 0.7
+* for modelVersion 7.0.0 
+* PLAT-200
+* install webpackage-uploader 1.3.0
+* regex for people improved (cubixx:compound, cubixx:elementary, cubixx:webapp, cubixx:webutil (reason: article in ``App Developer Forum``:  Cubixx Web Package Generator sollte auch typische englische Autorennamen zulassen
+
 ## Version 0.6 (2015-08-06)
 ## Change
-* PLAT-198: default version for crc (1.1) ,crcLoader (1.1) cif (1.1) and CubxPolymer (1.1) updated. (cubixx:compound, cubixx:elementary, cubixx:palt 
+* PLAT-198: default version for crc (1.1) ,crcLoader (1.1) cif (1.1) and CubxPolymer (1.1) updated. (cubixx:compound, cubixx:elementary, cubixx:webapp 
 
 ## Version 0.5 (2015-08-04)
 ## Improvement

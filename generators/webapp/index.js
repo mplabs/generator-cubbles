@@ -14,7 +14,7 @@ module.exports = yeoman.generators.Base.extend({
         this.webappname_regex = /^([A-Za-z0-9 ]+)(\-[A-Za-z0-9 ]+)*$/;
         this.groupid_regex = /^([a-z0-9-_]+)(\.[a-z0-9-_]+)*$/;
         this.version_regex = /^(\d+)(\.[\d]+)*(-SNAPSHOT)?$/;
-        this.peopleName_regex = /^(([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?\s)+([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?$/;
+        this.peopleName_regex = /^(([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?[\.]?\s)+([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?$/;
         // for the url-regex @see https://mathiasbynens.be/demo/url-regex
         this.url_regexByStephanhay = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
         this.email_regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
