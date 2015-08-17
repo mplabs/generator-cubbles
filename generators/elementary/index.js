@@ -252,12 +252,13 @@ module.exports = yeoman.generators.Base.extend({
             /** Now copy all the other stuff.
              * @see https://github.com/isaacs/node-glob#options
              */
+            var templatePath = this.templatePath();
             this.fs.copy(
                 this.templatePath('./**/*'),
                 this.destinationRoot(), {
                     globOptions: {
                         dot: true,
-                        ignore: ['**/_**']
+                        ignore: [templatePath + '/**/_*']
                     }
                 }
             );
