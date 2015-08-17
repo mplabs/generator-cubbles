@@ -2,7 +2,7 @@
 
 ## Version 0.6 (2015-08-06)
 ## Change
-* PLAT-198: default version for crc (1.1) ,crcLoader (1.1) cif (1.1) and CubxPolymer (1.1) updated. (cubixx:compound, cubixx:elementary, cubixx:palt 
+* PLAT-198: default version for crc (1.1) ,crcLoader (1.1) cif (1.1) and CubxPolymer (1.1) updated. (cubixx:compound, cubixx:elementary, cubixx:palt
 
 ## Version 0.5 (2015-08-04)
 ## Improvement
@@ -13,18 +13,19 @@
 * included grunt task localhost to check urls to localhost before deployment
 * groupId can include die charachters `-` and `_`.
 * preinstall of webpackage-uploader-1.2.2
-* limited regex pattern for name of the component: componentname should begin with a letter. Important because of registration of custom tags. (cubixx:elementary und cubixx:compound) 
+* limited regex pattern for name of the component: componentname should begin with a letter. Important because of registration of custom tags. (cubixx:elementary und cubixx:compound)
 * included grunt task `validate` (cubixx:webapp, cubixx:compound, cubixx:elementary, cubixx:webutil)
 
- 
+
 ## Version 0.4.4 (2015-07-31)
 ### BugFix
-* the dependency of cubxpolymer was not correct. (The groupId was in version 0.5 changed.) 
+* the dependency of cubxpolymer was not correct. (The groupId was in version 0.5 changed.)
 * updated cubxpolymer version to 0.6.1 (cubixx:elementary)
 
 ## Version 0.4.3 (2015-07-28)
 ### BugFix
-* by generate a webapp is no manifest.component necessary. manifest.component deleted. 
+* by generate a webapp is no manifest.component necessary. manifest.component deleted.
+
 
 ## Version 0.4.2 (2015-07-27)
 ### BugFix
@@ -32,13 +33,15 @@
 
 ## Version 0.4.1 (2015-07-27)
 ### BugFix
+
 * correction of include CRCLoader ( in the script tag in index.html included the groupId cubx.core )
-* correction githooks grunt task (task `lint` renamed in `validateSources` 
+* correction githooks grunt task (task `lint` renamed in `validateSources`
+
 
 ## Version 0.4 (2015-07-24)
 ### Improvement
-* ready for modelVersion 5.0.0  
- 
+* ready for modelVersion 5.0.0
+
 ## Version 0.3.5 (2015-07-16): Fixed PLAT-214 (grunt deployIntegration), PLAT-215 (missing .gitignore File).
 ## Version 0.3.4 (2015-07-14): Fixed PLAT-208 (cubixx:compound).
 ##* Version 0.3.3 (2015-07-14): Fixed PLAT-208 (cubixx:elementary).
