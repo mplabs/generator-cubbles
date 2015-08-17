@@ -1,6 +1,7 @@
 # Releases:
 
 ## Version 0.9
+
 * for modelVersion 7.0.0
 * PLAT-200
 * install webpackage-uploader 1.3.0
@@ -37,6 +38,8 @@ for modelVersion 6.0
 * PLAT-198: default version for crc (1.1) ,crcLoader (1.1) cif (1.1) and CubxPolymer (1.1) updated. (cubixx:compound, cubixx:elementary, cubixx:webapp
 
 
+
+
 ## Version 0.5 (2015-08-04)
 ## Improvement
 * modelVersion 6.0 included, defailt-values CRCLoader, CRC, CIF, CubxPolymer updated (cubixx:webapp, cubixx:compound, cubixx:elementary, cubixx:webutil)
@@ -59,7 +62,6 @@ for modelVersion 6.0
 ### BugFix
 * by generate a webapp is no manifest.component necessary. manifest.component deleted.
 
-
 ## Version 0.4.2 (2015-07-27)
 ### BugFix
 * correction CRCLoader version to 0.6.1
@@ -69,7 +71,6 @@ for modelVersion 6.0
 
 * correction of include CRCLoader ( in the script tag in index.html included the groupId cubx.core )
 * correction githooks grunt task (task `lint` renamed in `validateSources`
-
 
 ## Version 0.4 (2015-07-24)
 ### Improvement
