@@ -5,6 +5,6 @@
     },
     "proxy": "",
     "path": {
-        "root": ".\\dist"
+        "root": "./dist"
     }
 }

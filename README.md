@@ -2,7 +2,7 @@
 
 
 ## Introduction
-The generators provide a scaffolding using [Yeoman](http://yeoman.io) (a scaffolding tool for the web). 
+The generators provide a scaffolding using [Yeoman](http://yeoman.io) (a scaffolding tool for the web).
 It lets you easily create and customize Cubixx (custom) web packages via the command line. This saves you time writing boilerplate code so you can start writing up the logic to your components straight away.
 
 ## Features
@@ -16,7 +16,6 @@ It lets you easily create and customize Cubixx (custom) web packages via the com
 1. The Yeoman package. Install it if it is not already on your system: `npm install -g yo`
 2. Install the Yeoman generator for Cubixx-WebPackages: `npm install -g https://npm.webblebase.net:444/generator-cubixx/-/generator-cubixx-<version>.tgz`
 
--> _**NOTE**: the preinstall script of cubixx-generator will install the webpackage-uploader globally._
 
 ## Scaffold a WebPackage
 

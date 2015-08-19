@@ -264,7 +264,7 @@ module.exports = yeoman.generators.Base.extend({
         ));
         this.log(
             'Next:\n' +
-            '1) Put your resources into the \'public/resources\' -folder\n' +
+            '1) Put your resources into the \'public/\' -folder\n' +
             '2) Update the \'dependency.json\' with\n' +
             '   * the local resources and\n' +
             '   * (optionally) dependencies to other webpackages.\n' +

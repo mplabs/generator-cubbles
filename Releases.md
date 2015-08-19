@@ -1,5 +1,22 @@
 # Releases:
 
+## Version 0.7.0 (2015-08-19)
+for modelVersion 6.0
+
+## Change
+* install webpackage-uploader locally
+* update deploy task for calling the local installed webpackage-uploader  (cubixx:webapp, cubixx:webutil, cubixx:compound, cubixx:elementary)
+
+## BugFix
+* deployIntegration-config.json and deployLocal-config.json: correct attribute `root`
+
+
+    "path": {
+        "root": "./dist"
+    }
+
+* manifest.webpackage: korrektur the template `"authors": <%- webpackageAuthors %>` (cubixx:webapp, cubixx:webutil, cubixx:compound, cubixx:elementary)
+
 ## Version 0.6 (2015-08-06)
 ## Change
 * PLAT-198: default version for crc (1.1) ,crcLoader (1.1) cif (1.1) and CubxPolymer (1.1) updated. (cubixx:compound, cubixx:elementary, cubixx:palt

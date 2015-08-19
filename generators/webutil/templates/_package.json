@@ -34,7 +34,8 @@
     "load-grunt-tasks": "^2.0.0",
     "time-grunt": "~1.0.0",
     "grunt-available-tasks":"~0.5.0",
-    "chalk": "~1.1.0"
+    "chalk": "~1.1.0",
+      "webpackage-uploader": "https://npm.webblebase.net:444/webpackage-uploader/-/webpackage-uploader-1.2.2.tgz"
   },
   "scripts": {
     "blanket": {
