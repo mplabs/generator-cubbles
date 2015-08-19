@@ -12,7 +12,7 @@
         "cubixx",
         "compound"
     ],
-    "authors": <%= webpackageAuthors %>,
+    "authors": <%- webpackageAuthors %>,
     "man": [
     ]
 }

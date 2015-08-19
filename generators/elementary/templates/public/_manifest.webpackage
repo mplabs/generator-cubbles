@@ -11,7 +11,7 @@
         "cubixx",
         "elementary"
     ],
-    "authors": <%= webpackageAuthors %>,
+    "authors": <%- webpackageAuthors %>,
     "man": [
     ]
 }

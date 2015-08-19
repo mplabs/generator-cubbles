@@ -11,7 +11,7 @@
         "cubixx",
         "webutil"
     ],
-    "authors": <%= webpackageAuthors %>,
+    "authors": <%- webpackageAuthors %>,
     "man": [
     ]
 }

@@ -1,10 +1,27 @@
 # Releases:
 
-## Version 0.7
+## Version 0.8.0
 * for modelVersion 7.0.0
 * PLAT-200
 * install webpackage-uploader 1.3.0
 * regex for people improved (cubixx:compound, cubixx:elementary, cubixx:webapp, cubixx:webutil (reason: article in ``App Developer Forum``:  Cubixx Web Package Generator sollte auch typische englische Autorennamen zulassen
+
+## Version 0.7.0 (2015-08-19)
+for modelVersion 6.0
+
+## Change
+* install webpackage-uploader locally
+* update deploy task for calling the local installed webpackage-uploader  (cubixx:webapp, cubixx:webutil, cubixx:compound, cubixx:elementary)
+
+## BugFix
+* deployIntegration-config.json and deployLocal-config.json: correct attribute `root`
+
+
+    "path": {
+        "root": "./dist"
+    }
+
+* manifest.webpackage: korrektur the template `"authors": <%- webpackageAuthors %>` (cubixx:webapp, cubixx:webutil, cubixx:compound, cubixx:elementary)
 
 ## Version 0.6 (2015-08-06)
 ## Change
