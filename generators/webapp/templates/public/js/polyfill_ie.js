@@ -1,7 +1,5 @@
-/**
- * Created by jtrs on 07.08.2015.
- */
 (function () {
+    'use strict';
     function CustomEvent ( event, params ) {
         params = params || { bubbles: false, cancelable: false, detail: undefined };
         var evt = document.createEvent( 'CustomEvent' );
