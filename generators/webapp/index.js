@@ -12,9 +12,11 @@ module.exports = yeoman.generators.Base.extend({
          */
         this.webpackagename_regex = /^([a-z0-9]+)(\-[a-z0-9]+)+$/;
         this.webappname_regex = /^([A-Za-z0-9 ]+)(\-[A-Za-z0-9 ]+)*$/;
-        this.groupid_regex = /^([a-z0-9]+||([a-z0-9]+[a-z0-9-][a-z0-9]+)*)(\.([a-z0-9]+||([a-z0-9]+[a-z0-9-][a-z0-9]+)*))*$/;
+        this.groupid_regex =
+            /^([a-z0-9]+||([a-z0-9]+[a-z0-9-][a-z0-9]+)*)(\.([a-z0-9]+||([a-z0-9]+[a-z0-9-][a-z0-9]+)*))*$/;
         this.version_regex = /^(\d+)(\.[\d]+)*(-SNAPSHOT)?$/;
-        this.peopleName_regex = /^(([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?[\.]?\s)+([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?$/;
+        this.peopleName_regex =
+            /^(([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?[\.]?\s)+([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?$/;
         // for the url-regex @see https://mathiasbynens.be/demo/url-regex
         this.url_regexByStephanhay = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
         this.email_regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -117,11 +119,16 @@ module.exports = yeoman.generators.Base.extend({
                     return true;
                 }.bind(this)
             }, {
-                type: 'list',
+                type: 'input',
                 name: 'devBaseUrl',
-                message: 'index.html: From which Cubixx-Base do you want to load dependencies (at development time)?',
-                choices: ["https://webblebase.net", "http://boot2docker.me"],
-                default: 0
+                message: 'index.html: Which Cubixx-Base do you want to load dependencies from (at dev time)?',
+                default: "https://webblebase.net",
+                validate: function(input) {
+                    if (!this.url_regexByStephanhay.test(input)) {
+                        return "Please provide a value with a valid pattern (" + this.version_regex + ").";
+                    }
+                    return true;
+                }.bind(this)
             }, {
                 type: 'input',
                 name: 'crcLoaderVersion',
@@ -236,7 +243,6 @@ module.exports = yeoman.generators.Base.extend({
                 this.props
             );
 
-
             /** Now copy all the other stuff.
              * @see https://github.com/isaacs/node-glob#options
              */
@@ -264,14 +270,14 @@ module.exports = yeoman.generators.Base.extend({
         ));
         this.log(
             'Next:\n' +
-            '1) Put your resources into the \'public/\' -folder\n' +
+            '1) Put your resources into the \'public\' -folder\n' +
             '2) Update the \'dependency.json\' with\n' +
             '   * the local resources and\n' +
             '   * (optionally) dependencies to other webpackages.\n' +
             '3) Review the \'webpackage.manifest\' especially \n' +
             '   * the \'version\' \n' +
             '\n' +
-            'FINALLY: Run \'grunt deployLocal\' or \'grunt deployIntegration\'  to deploy the webpackage into the Cubixx-Base of your choice.' +
+            'FINALLY: Run \'grunt deploy\' to deploy the webpackage into the Cubixx-Base of your choice.' +
             '\n' +
             'Note: type \'grunt\' to list all available grunt tasks '
         );
