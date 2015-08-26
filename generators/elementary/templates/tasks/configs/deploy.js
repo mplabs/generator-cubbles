@@ -70,7 +70,6 @@ module.exports = function(grunt) {
                             deployCustomValueMap.deployConfig.couchdb.url =
                                 urlWithoutCredentials.replace(/(^https?:\/\/)/,
                                     '$1' + deployCustomValueMap.credentials + '@');
-
                             // now write file
                             grunt.file.write(deployCustomValueMap.configFile,
                                 JSON.stringify(deployCustomValueMap.deployConfig, null, 2));
@@ -80,7 +79,6 @@ module.exports = function(grunt) {
                     }
                 }
             }
-
         }
     };
 };

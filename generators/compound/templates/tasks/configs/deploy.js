@@ -38,7 +38,6 @@ module.exports = function(grunt) {
                                     var urlWithCredentials = deployConfig.couchdb.url;
                                     var credentials = urlWithCredentials.replace(/^https?:\/\//, '').replace(/@.*/, '');
                                     var strippedUrl = urlWithCredentials.replace(new RegExp(credentials + '@'), '');
-                                    //
                                     var deployCustomValueMap = {};
                                     deployCustomValueMap.configFile = configFile;
                                     deployCustomValueMap.deployConfig = deployConfig;
