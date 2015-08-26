@@ -44,6 +44,11 @@ module.exports = function(grunt) {
         //'compress:pack' // pack as tar
     ]);
 
+    grunt.registerTask('deploy', 'Deploy WebPackage to a Cubixx-Base of your choice', [
+        'prompt:deployCustom',
+        'pack',
+        'exec:deployCustom'
+    ]);
     grunt.registerTask('deployLocal', 'Deploy WebPackage to Cubixx-Base at http://boot2docker.me', [
         'pack',
         'exec:deployLocal'

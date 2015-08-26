@@ -58,11 +58,15 @@ module.exports = function(grunt) {
         'find-in-json:manifest.cubx'
     ]);
 
+    grunt.registerTask('deploy', 'Deploy WebPackage to a Cubixx-Base of your choice', [
+        'prompt:deployCustom',
+        'pack',
+        'exec:deployCustom'
+    ]);
     grunt.registerTask('deployLocal', 'Deploy WebPackage to Cubixx-Base at http://boot2docker.me', [
         'pack',
         'exec:deployLocal'
     ]);
-
     grunt.registerTask('deployIntegration', 'Deploy WebPackage to Cubixx-Base at https://webblebase.net', [
         'pack',
         'exec:deployIntegration'

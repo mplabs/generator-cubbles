@@ -104,15 +104,20 @@ module.exports = yeoman.generators.Base.extend({
                     return true;
                 }.bind(this)
             }, {
-                type: 'list',
+                type: 'input',
                 name: 'devBaseUrl',
-                message: 'WebPackage/index.html: From which Cubixx-Base do you want to load dependencies (at development time)?',
-                choices: ["https://webblebase.net", "http://boot2docker.me"],
-                default: 0
+                message: 'index.html: Which Cubixx-Base do you want to load dependencies from (at dev time)?',
+                default: "https://webblebase.net",
+                validate: function(input) {
+                    if (!this.url_regexByStephanhay.test(input)) {
+                        return "Please provide a value with a valid pattern (" + this.version_regex + ").";
+                    }
+                    return true;
+                }.bind(this)
             }, {
                 type: 'input',
                 name: 'crcLoaderVersion',
-                message: 'WebPackage/index.html: Which Version of CRC-Loader shall be refered to?',
+                message: 'index.html: Which Version of CRC-Loader shall be refered to?',
                 default: '1.1',
                 validate: function(input) {
                     if (!this.version_regex.test(input)) {
@@ -123,7 +128,7 @@ module.exports = yeoman.generators.Base.extend({
             }, {
                 type: 'input',
                 name: 'crcVersion',
-                message: 'WebPackage/index.html: Which Version of CRC shall be refered to?',
+                message: 'index.html: Which Version of CRC shall be refered to?',
                 default: '1.1',
                 validate: function(input) {
                     if (!this.version_regex.test(input)) {
@@ -134,7 +139,7 @@ module.exports = yeoman.generators.Base.extend({
             }, {
                 type: 'input',
                 name: 'cifVersion',
-                message: 'WebPackage/index.html: Which Version of CIF shall be refered to?',
+                message: 'index.html: Which Version of CIF shall be refered to?',
                 default: '1.1',
                 validate: function(input) {
                     if (!this.version_regex.test(input)) {
@@ -261,7 +266,7 @@ module.exports = yeoman.generators.Base.extend({
             '3) Review the \'webpackage.manifest\' especially \n' +
             '   * the \'version\' \n' +
             '\n' +
-            'FINALLY: Run \'grunt deployLocal\' or \'grunt deployIntegration\'  to deploy the webpackage into the Cubixx-Base of your choice.' +
+            'FINALLY: Run \'grunt deploy\' to deploy the webpackage into the Cubixx-Base of your choice.' +
             '\n' +
             'Note: type \'grunt\' to list all available grunt tasks '
         );

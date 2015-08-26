@@ -117,11 +117,16 @@ module.exports = yeoman.generators.Base.extend({
                     return true;
                 }.bind(this)
             }, {
-                type: 'list',
+                type: 'input',
                 name: 'devBaseUrl',
-                message: 'index.html: From which Cubixx-Base do you want to load dependencies (at development time)?',
-                choices: ["https://webblebase.net", "http://boot2docker.me"],
-                default: 0
+                message: 'index.html: Which Cubixx-Base do you want to load dependencies from (at dev time)?',
+                default: "https://webblebase.net",
+                validate: function(input) {
+                    if (!this.url_regexByStephanhay.test(input)) {
+                        return "Please provide a value with a valid pattern (" + this.version_regex + ").";
+                    }
+                    return true;
+                }.bind(this)
             }, {
                 type: 'input',
                 name: 'crcLoaderVersion',
@@ -263,14 +268,14 @@ module.exports = yeoman.generators.Base.extend({
         ));
         this.log(
             'Next:\n' +
-            '1) Put your resources into the \'public/resources\' -folder\n' +
+            '1) Put your resources into the \'public\' -folder\n' +
             '2) Update the \'dependency.json\' with\n' +
             '   * the local resources and\n' +
             '   * (optionally) dependencies to other webpackages.\n' +
             '3) Review the \'webpackage.manifest\' especially \n' +
             '   * the \'version\' \n' +
             '\n' +
-            'FINALLY: Run \'grunt deployLocal\' or \'grunt deployIntegration\'  to deploy the webpackage into the Cubixx-Base of your choice.' +
+            'FINALLY: Run \'grunt deploy\' to deploy the webpackage into the Cubixx-Base of your choice.' +
             '\n' +
             'Note: type \'grunt\' to list all available grunt tasks '
         );

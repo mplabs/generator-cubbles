@@ -196,7 +196,7 @@ module.exports = yeoman.generators.Base.extend({
             '3) Review the \'webpackage.manifest\' especially \n' +
             '   * the \'version\' \n' +
             '\n' +
-            'FINALLY: Run \'grunt deployLocal\' or \'grunt deployIntegration\'  to deploy the webpackage into the Cubixx-Base of your choice.' +
+            'FINALLY: Run \'grunt deploy\' to deploy the webpackage into the Cubixx-Base of your choice.' +
             '\n' +
             'Note: type \'grunt\' to list all available grunt tasks '
         );
