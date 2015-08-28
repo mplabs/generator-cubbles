@@ -48,14 +48,14 @@ module.exports.tasks = {
                 replacements: [
                     {
                         //if developed directly against database (deprecated)
-                        //e.g. http://boot2docker.me:5984/webpackage-store/crc-loader...
-                        pattern: /(https?:\/\/[\w\.\-]*:\d{0,4}\/[\w\d\.\-]*\/)(crc-loader)/ig,
+                        //e.g. http://boot2docker.me:5984/webpackage-store/cubx.core.crc-loader...
+                        pattern: /(https?:\/\/[\w\.\-]*:\d{0,4}\/[\w\d\.\-]*\/)(cubx.core.crc-loader)/ig,
                         replacement: '../$2'
                     },
                     {
                         //if developed against the gateway (recommended)
-                        //e.g. http://boot2docker.me/crc-loader...
-                        pattern: /(https?:\/\/[\w\.\-]*\/)(crc-loader)/ig,
+                        //e.g. http://boot2docker.me/cubx.core.crc-loader...
+                        pattern: /(https?:\/\/[\w\.\-]*\/)(cubx.core.crc-loader)/ig,
                         replacement: '/$2'
                     }]
             }
