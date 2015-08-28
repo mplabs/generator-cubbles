@@ -1,5 +1,10 @@
 # Releases:
 
+## Version 0.8.1
+
+## BugFix
+* PLAT-277: crc-loader url wird beim deployment nicht korrekt ersetzt
+
 ## Version 0.8.0
 * for modelVersion 7.0.0
 * PLAT-200
