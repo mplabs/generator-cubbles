@@ -35,8 +35,8 @@ module.exports = function(grunt) {
                                     var configFile = 'tasks/configs/deployCustom-config.json';
                                     var deployConfig = grunt.file.readJSON(configFile);
                                     var urlWithCredentials = deployConfig.couchdb.url;
-                                    var credentials = urlWithCredentials.replace(/^https?:\/\//, "").replace(/@.*/, "");
-                                    var strippedUrl = urlWithCredentials.replace(new RegExp(credentials + '@'), "");
+                                    var credentials = urlWithCredentials.replace(/^https?:\/\//, '').replace(/@.*/, '');
+                                    var strippedUrl = urlWithCredentials.replace(new RegExp(credentials + '@'), '');
                                     //
                                     var deployCustomValueMap = {};
                                     deployCustomValueMap.configFile = configFile;
@@ -48,10 +48,10 @@ module.exports = function(grunt) {
                                 },
                                 validate: function(input) {
                                     // for the url-regex @see https://mathiasbynens.be/demo/url-regex
-                                    var url_regexByStephanhay = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
-                                    if (!url_regexByStephanhay.test(input)) {
-                                        return "Please provide a url with a valid pattern (regex=" +
-                                            url_regexByStephanhay + ").\n";
+                                    var urlRegexByStephanhay = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
+                                    if (!urlRegexByStephanhay.test(input)) {
+                                        return 'Please provide a url with a valid pattern (regex=' +
+                                            urlRegexByStephanhay + ').\n';
                                     }
                                     return true;
                                 }
@@ -68,7 +68,7 @@ module.exports = function(grunt) {
                             var urlWithoutCredentials = results.deployBaseUrl;
                             deployCustomValueMap.deployConfig.couchdb.url =
                                 urlWithoutCredentials.replace(/(^https?:\/\/)/,
-                                    "$1" + deployCustomValueMap.credentials + "@");
+                                    '$1' + deployCustomValueMap.credentials + '@');
 
                             // now write file
                             grunt.file.write(deployCustomValueMap.configFile,
