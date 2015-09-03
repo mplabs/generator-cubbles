@@ -53,6 +53,7 @@ module.exports = function(grunt) {
                                         return 'Please provide a url with a valid pattern (regex=' +
                                             urlRegexByStephanhay + ').\n';
                                     }
+
                                     return true;
                                 }
                             }
