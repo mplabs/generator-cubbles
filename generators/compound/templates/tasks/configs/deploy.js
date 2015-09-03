@@ -16,7 +16,7 @@ module.exports = function(grunt) {
                     ' tasks/configs/deployIntegration-config.json'
                 },
                 deployCustom: {
-                    cmd: ath.relative('', 'node_modules/.bin/webpackage-uploader') +
+                    cmd: path.relative('', 'node_modules/.bin/webpackage-uploader') +
                     ' tasks/configs/deployCustom-config.json'
                 },
                 validateWebpackage: {
