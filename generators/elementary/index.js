@@ -121,7 +121,7 @@ module.exports = yeoman.generators.Base.extend({
                 default: "https://webblebase.net",
                 validate: function(input) {
                     if (!this.url_regexByStephanhay.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.version_regex + ").";
+                        return "Please provide a value with a valid pattern (" + this.url_regexByStephanhay + ").";
                     }
                     return true;
                 }.bind(this)
