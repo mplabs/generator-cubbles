@@ -7,7 +7,15 @@ module.exports.tasks = {
         tasks: {
             options: {
                 filter: 'include',
-                tasks: ['pack', 'deploy', 'deployLocal', 'deployIntegration', 'generateDoc', 'validateSources', 'initGit']
+                tasks: [
+                    'pack',
+                    'deploy',
+                    'deployLocal',
+                    'deployIntegration',
+                    'deployCustom',
+                    'generateDoc',
+                    'validateSources',
+                    'initGit']
             }
         }
     }
