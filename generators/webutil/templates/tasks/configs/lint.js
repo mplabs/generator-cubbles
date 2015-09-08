@@ -23,11 +23,6 @@ module.exports.tasks = {
                 '*.js',
                 'tasks/**/*.js'
             ]
-        },
-        client: {
-            src: [
-                '<%= param.src %>/**/*.js'
-            ]
         }
 
     },

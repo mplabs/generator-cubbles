@@ -1,6 +1,7 @@
 /*jshint node: true */
 /*global module */
 'use strict';
+var path = require('path');
 
 module.exports = function(grunt) {
     return {

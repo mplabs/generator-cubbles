@@ -59,7 +59,7 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask('validateSources', 'validate js and css', [
-        'jshint', 'jscs', 'jsonlint', 'csslint', 'sloc'
+        'jshint', 'jscs', 'jsonlint', 'csslint'
     ]);
 
     grunt.registerTask('generateDocs', 'generate documentation', [
