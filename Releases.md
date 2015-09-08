@@ -1,4 +1,17 @@
 # Releases:
+## Version 0.9
+* for modelVersion 7.0.0
+* PLAT-200
+### Bugfix
+* BugFix formatting js/polyfill_ie.js
+* BugFix validateSource for cubixx:webutil (no cliesnt code validation)
+* BugFix included path modul in tasks/config/deployjs for  cubixx:webutil
+* BugFix formatting  tasks/config/avaiblabletasks.js cubixx:webutil, cubixx:compound , cubixx:elementary, cubixx:webapp
+
+### Change
+* install webpackage-uploader 1.3.0
+* regex for people improved (cubixx:compound, cubixx:elementary, cubixx:webapp, cubixx:webutil (reason: article in ``App Developer Forum``:  Cubixx Web Package Generator sollte auch typische englische Autorennamen zulassen
+
 
 ## Version 0.9
 
@@ -13,6 +26,7 @@
 ## BugFix
 * PLAT-277: crc-loader url wird beim deployment nicht korrekt ersetzt
 
+
 ## Version 0.8.0
 
 ## Change
@@ -21,11 +35,11 @@
 ## Version 0.7.0 (2015-08-19)
 for modelVersion 6.0
 
-## Change
+### Change
 * install webpackage-uploader locally
 * update deploy task for calling the local installed webpackage-uploader  (cubixx:webapp, cubixx:webutil, cubixx:compound, cubixx:elementary)
 
-## BugFix
+### BugFix
 * deployIntegration-config.json and deployLocal-config.json: correct attribute `root`
 
 
@@ -36,14 +50,14 @@ for modelVersion 6.0
 * manifest.webpackage: korrektur the template `"authors": <%- webpackageAuthors %>` (cubixx:webapp, cubixx:webutil, cubixx:compound, cubixx:elementary)
 
 ## Version 0.6 (2015-08-06)
-## Change
+### Change
 * PLAT-198: default version for crc (1.1) ,crcLoader (1.1) cif (1.1) and CubxPolymer (1.1) updated. (cubixx:compound, cubixx:elementary, cubixx:webapp
 
 
 
 
 ## Version 0.5 (2015-08-04)
-## Improvement
+### Improvement
 * modelVersion 6.0 included, defailt-values CRCLoader, CRC, CIF, CubxPolymer updated (cubixx:webapp, cubixx:compound, cubixx:elementary, cubixx:webutil)
 * included preinstall script to install webpackage-uploder in correct version globally
 * included grunt task `validateWebpackages` (cubixx:webapp, cubixx:compound, cubixx:elementary, cubixx:webutil)
