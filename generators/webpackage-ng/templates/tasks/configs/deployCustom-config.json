@@ -1,0 +1,10 @@
+{
+  "couchdb": {
+    "url": "https://dev:webble%231@mycubixxbase.net",
+    "dbname": "_api/upload"
+  },
+  "proxy": "",
+  "path": {
+    "root": "./dist"
+  }
+}

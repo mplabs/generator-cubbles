@@ -1,0 +1,10 @@
+{
+    "crc": {
+        "id": "cubx.core.crc-<%= crcVersion %>"
+    },
+    "cif": {
+        "id" :   "cubx.core.cif-<%= cifVersion %>"
+    },
+    "runtimeMode": "dev"
+}
+

@@ -15,7 +15,8 @@ module.exports = yeoman.generators.Base.extend({
             '\n$ yo cubixx:webapp (for a Cubixx WebApplication)'+
             '\n$ yo cubixx:compound (for a Compound Cubixx Component)'+
             '\n$ yo cubixx:elementary (for a Elementary Cubixx Component)'+
-            '\n$ yo cubixx:webutil (\'webutil\' is also known as \'webresource\')'
+            '\n$ yo cubixx:webutil (\'webutil\' is also known as \'webresource\')'+
+            '\n$ yo cubixx:webpackage-ng (next generation - context: PLAT-295)'
         ));
         done();
     },

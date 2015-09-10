@@ -1,0 +1,10 @@
+{
+    "resources": [
+        "./component/<%= name %>.html"
+    ],
+    "dependencies": [
+        {
+            "id" : "cubx.core.cubxpolymer-<%= cubxPolymerVersion %>"
+        }
+    ]
+}

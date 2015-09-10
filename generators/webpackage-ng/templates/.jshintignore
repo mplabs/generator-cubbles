@@ -1,0 +1,3 @@
+webpackage/**/vendor/**
+webpackage/test/**
+webpackage/test-results/**
