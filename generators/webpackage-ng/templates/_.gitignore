@@ -16,9 +16,9 @@ results
 npm-debug.log
 node_modules/
 
-dist/
-pack/
-build/
+webpackage_dist/
+webpackage_pack/
+webpackage_build/
 www/
 .tmp/
 docs/

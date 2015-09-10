@@ -1,6 +1,6 @@
 node_modules
 .gitignore
 .tmp
-build
-dist
-pack
+webpackage_build
+webpackage_dist
+webpackage_pack
