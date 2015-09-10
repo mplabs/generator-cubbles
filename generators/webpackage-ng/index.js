@@ -238,21 +238,7 @@ module.exports = yeoman.generators.Base.extend({
                 this.destinationPath('webpackage/dependency.json'),
                 this.props
             );
-            this.fs.copyTpl(
-                this.templatePath('webpackage/component/_cubx-component-template.html'),
-                this.destinationPath('webpackage/component/' + this.props.name + '.html'),
-                this.props
-            );
-            this.fs.copyTpl(
-                this.templatePath('webpackage/component/_cubx-component-template.js'),
-                this.destinationPath('webpackage/component/' + this.props.name + '.js'),
-                this.props
-            );
-            this.fs.copyTpl(
-                this.templatePath('webpackage/component/_cubx-component-template.css'),
-                this.destinationPath('webpackage/component/' + this.props.name + '.css'),
-                this.props
-            );
+
 
             /** Now copy all the other stuff.
              * @see https://github.com/isaacs/node-glob#options
