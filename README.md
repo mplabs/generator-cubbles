@@ -1,4 +1,3 @@
 ## ide4coders
 
-integrated development environment for coders
-
+integrated development environment for cubixx-coders
