@@ -29,6 +29,15 @@ It lets you easily create and customize Cubixx (custom) web packages via the com
 * `yo cubixx:elementary`: Sets up a new WebPackage for a Elementary CubxPolymer -Component.
 * `yo cubixx:webutil`: Sets up a new WebPackage for a WebUtil (aka WebResource).
 
+## Use the IDE
+The generated project comes with an **Integrated Development Environment (IDE)**. 
+
+Some notes on how to deal with this: 
+
+1. The IDE is part of your project, so we recommend to include the `ide` -subfolder into your _source-control-management_.
+2. The IDE is yours. You are free to _modify structure and tasks to your needs_. 
+3. The IDE is managed within a dedicated git-Repository. If you want to _stay up-to-date with the latest changes_, map the IDE-Git-Repo into your WebPackage-Project using the Git-Subtree-Feature (HowTo: [de](https://git-scm.com/book/de/v1/Git-Tools-Subtree-Merging)/[en](https://git-scm.com/book/en/v1/Git-Tools-Subtree-Merging))
+
 ## License
 MIT <http://opensource.org/licenses/MIT>
 
