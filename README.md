@@ -19,7 +19,7 @@ We recommend the following steps:
         $ git fetch ide4coders master
         
         # create a folder 'ide' and add all resources of the 'ide4coders' -remote´s 'master' -branch
-        $ git subtree add --prefix ide ide4coders master --squash
+        $ git subtree add --prefix ide ide4coders/master --squash
         
 3.  Later ... Update the subtree in case you´d like to merge in changes: 
         
@@ -27,7 +27,7 @@ We recommend the following steps:
         $ git fetch ide4coders master
         
         # merge in the locally available updates
-        $ git subtree merge --prefix ide ide4coders master --squash
+        $ git subtree merge --prefix ide ide4coders/master --squash
 
 3.  For IDE-Committers ... Pushing modifications from your subtree back to the upstream-repo is easy: 
         
