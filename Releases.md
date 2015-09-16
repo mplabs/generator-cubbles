@@ -1,7 +1,8 @@
 # Releases:
 ## Version 0.9
 * for modelVersion 7.0.0
-* PLAT-200
+* PLAT-200 - Initialization for compound components
+
 ### Bugfix
 * BugFix formatting js/polyfill_ie.js
 * BugFix validateSource for cubixx:webutil (no cliesnt code validation)
