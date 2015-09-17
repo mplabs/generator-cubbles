@@ -55,7 +55,7 @@ module.exports = yeoman.generators.Base.extend({
                 default: this.webapackageName,
                 validate: function(input) {
                     if (!this.webpackagename_regex.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.webpackagename_regex + ").";
+                        return 'Please provide a value with a valid pattern (' + this.webpackagename_regex + ').';
                     }
                     return true;
                 }.bind(this)
@@ -66,7 +66,7 @@ module.exports = yeoman.generators.Base.extend({
                 default: this.appname,
                 validate: function(input) {
                     if (!this.webappname_regex.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.webappname_regex + ").";
+                        return 'Please provide a value with a valid pattern (' + this.webappname_regex + ').';
                     }
                     return true;
                 }.bind(this)
@@ -77,7 +77,7 @@ module.exports = yeoman.generators.Base.extend({
                 default: 'org.example',
                 validate: function(input) {
                     if (!this.groupid_regex.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.groupid_regex + ").";
+                        return 'Please provide a value with a valid pattern (' + this.groupid_regex + ').';
                     }
                     return true;
                 }.bind(this)
@@ -92,7 +92,7 @@ module.exports = yeoman.generators.Base.extend({
                 store: true,
                 validate: function(input) {
                     if (!this.peopleName_regex.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.peopleName_regex + ").";
+                        return 'Please provide a value with a valid pattern (' + this.peopleName_regex + ').';
                     }
                     return true;
                 }.bind(this)
@@ -103,7 +103,7 @@ module.exports = yeoman.generators.Base.extend({
                 store: true,
                 validate: function(input) {
                     if (!this.email_regex.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.email_regex + ").";
+                        return 'Please provide a value with a valid pattern (' + this.email_regex + ').';
                     }
                     return true;
                 }.bind(this)
@@ -114,7 +114,7 @@ module.exports = yeoman.generators.Base.extend({
                 default: 'none',
                 validate: function(input) {
                     if (input != 'none' && !this.url_regexByStephanhay.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.url_regexByStephanhay + ").";
+                        return 'Please provide a value with a valid pattern (' + this.url_regexByStephanhay + ').';
                     }
                     return true;
                 }.bind(this)
@@ -122,10 +122,10 @@ module.exports = yeoman.generators.Base.extend({
                 type: 'input',
                 name: 'devBaseUrl',
                 message: 'index.html: Which Cubixx-Base do you want to load dependencies from (at dev time)?',
-                default: "https://webblebase.net",
+                default: 'https://webblebase.net',
                 validate: function(input) {
                     if (!this.url_regexByStephanhay.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.url_regexByStephanhay + ").";
+                        return 'Please provide a value with a valid pattern (' + this.url_regexByStephanhay + ').';
                     }
                     return true;
                 }.bind(this)
@@ -136,7 +136,7 @@ module.exports = yeoman.generators.Base.extend({
                 default: '1.2',
                 validate: function(input) {
                     if (!this.version_regex.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.version_regex + ").";
+                        return 'Please provide a value with a valid pattern (' + this.version_regex + ').';
                     }
                     return true;
                 }.bind(this)
@@ -147,7 +147,7 @@ module.exports = yeoman.generators.Base.extend({
                 default: '1.2',
                 validate: function(input) {
                     if (!this.version_regex.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.version_regex + ").";
+                        return 'Please provide a value with a valid pattern (' + this.version_regex + ').';
                     }
                     return true;
                 }.bind(this)
@@ -158,7 +158,7 @@ module.exports = yeoman.generators.Base.extend({
                 default: '1.2',
                 validate: function(input) {
                     if (!this.version_regex.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.version_regex + ").";
+                        return 'Please provide a value with a valid pattern (' + this.version_regex + ').';
                     }
                     return true;
                 }.bind(this)
@@ -183,7 +183,7 @@ module.exports = yeoman.generators.Base.extend({
             (this.props.webPackageAuthorUrl && this.props.webPackageAuthorUrl != 'none') ?
             (author.url = this.props.webPackageAuthorUrl) : null;
             // add this to the props to make it available for the template processing
-            this.props.webpackageAuthors = JSON.stringify([author])
+            this.props.webpackageAuthors = JSON.stringify([author]);
         },
 
         projectfiles: function() {
