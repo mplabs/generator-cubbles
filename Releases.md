@@ -2,7 +2,7 @@
 
 ## Version 0.9.1
 
-* Codestand nach mergen des Branches
+* Code after merge the PLAT-200 branch to master, with formatting updates
 
 ## Version 0.9
 * for modelVersion 7.0.0
@@ -15,17 +15,8 @@
 * BugFix formatting  tasks/config/avaiblabletasks.js cubixx:webutil, cubixx:compound , cubixx:elementary, cubixx:webapp
 
 ### Change
-* install webpackage-uploader 1.3.0
+* changed dev-dependency of webpackage-uploader to version 1.3.0
 * regex for people improved (cubixx:compound, cubixx:elementary, cubixx:webapp, cubixx:webutil (reason: article in ``App Developer Forum``:  Cubixx Web Package Generator sollte auch typische englische Autorennamen zulassen
-
-
-## Version 0.9
-
-* for modelVersion 7.0.0
-* PLAT-200
-* install webpackage-uploader 1.3.0
-* regex for people improved (cubixx:compound, cubixx:elementary, cubixx:webapp, cubixx:webutil (reason: article in ``App Developer Forum``:  Cubixx Web Package Generator sollte auch typische englische Autorennamen zulassen
-
 
 ## Version 0.8.1
 
