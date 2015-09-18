@@ -209,33 +209,13 @@ module.exports = yeoman.generators.Base.extend({
                 }
             );
             this.fs.copyTpl(
-                this.templatePath('_.gitignore'),
+                this.templatePath('%.gitignore'),
                 this.destinationPath('.gitignore'),
                 this.props
             );
             this.fs.copyTpl(
-                this.templatePath('webpackage/_index.html'),
-                this.destinationPath('webpackage/index.html'),
-                this.props
-            );
-            this.fs.copyTpl(
-                this.templatePath('webpackage/_manifest.webpackage'),
-                this.destinationPath('webpackage/manifest.webpackage'),
-                this.props
-            );
-            this.fs.copyTpl(
-                this.templatePath('webpackage/_manifest.webapp'),
-                this.destinationPath('webpackage/manifest.webapp'),
-                this.props
-            );
-            this.fs.copyTpl(
-                this.templatePath('webpackage/_manifest.cubx'),
-                this.destinationPath('webpackage/manifest.cubx'),
-                this.props
-            );
-            this.fs.copyTpl(
-                this.templatePath('webpackage/_dependency.json'),
-                this.destinationPath('webpackage/dependency.json'),
+                this.templatePath('workspace/webpackage/%manifest.webpackage'),
+                this.destinationPath('workspace/webpackage/manifest.webpackage'),
                 this.props
             );
 
@@ -249,7 +229,7 @@ module.exports = yeoman.generators.Base.extend({
                 this.destinationRoot(), {
                     globOptions: {
                         dot: true,
-                        ignore: [templatePath + '/**/_*']
+                        ignore: [templatePath + '/**/%*']
                     }
                 }
             );

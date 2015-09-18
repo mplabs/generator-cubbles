@@ -1,6 +1,0 @@
-node_modules
-.gitignore
-.tmp
-webpackage_build
-webpackage_dist
-webpackage_pack
