@@ -234,7 +234,7 @@ module.exports = yeoman.generators.Base.extend({
 
     install: function() {
         this.log('\nInstalling IDE dependencies ...');
-        this.spawnCommand('npm', ['install'], {cwd: 'ide'})
+        this.spawnCommandSync('npm', ['install'], {cwd: 'ide'})
     },
 
     end: function() {
