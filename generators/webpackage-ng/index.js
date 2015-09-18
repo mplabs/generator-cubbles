@@ -6,13 +6,14 @@ var yosay = require('yosay');
 module.exports = yeoman.generators.Base.extend({
 
     initializing: function() {
-         /**
+        /**
          * regex definitions for input validation (note: use http://regexpal.com/ for testing)
          */
         this.webpackagename_regex = /^([a-z][a-z0-9]*)(\-[a-z0-9]+)+$/;
         this.groupid_regex = /^([a-z0-9-_]+)(\.[a-z0-9-_]+)*$/;
         this.version_regex = /^(\d+)(\.[\d]+)*(-SNAPSHOT)?$/;
-        this.peopleName_regex = /^(([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?\s)+([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?$/;
+        this.peopleName_regex =
+            /^(([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?\s)+([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?$/;
         // for the url-regex @see https://mathiasbynens.be/demo/url-regex
         this.url_regexByStephanhay = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
         this.email_regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -48,7 +49,9 @@ module.exports = yeoman.generators.Base.extend({
                 type: 'input',
                 name: 'name',
                 message: 'WebPackage Name?',
-                default: (function() {return this.appname.toLowerCase().replace(/\s+/g, '-')}).bind(this),
+                default: (function() {
+                    return this.appname.toLowerCase().replace(/\s+/g, '-')
+                }).bind(this),
                 validate: function(input) {
                     if (!this.webpackagename_regex.test(input)) {
                         return "Please provide a value with a valid pattern (" + this.webpackagename_regex + ").";
@@ -196,17 +199,11 @@ module.exports = yeoman.generators.Base.extend({
 
     writing: {
 
-        webutil: function() {
+        webpackage: function() {
             this.fs.copyTpl(
-                this.templatePath('_README.md'),
+                this.templatePath('%README.md'),
                 this.destinationPath('README.md'),
                 this.props
-            );
-            this.fs.copyTpl(
-                this.templatePath('_package.json'),
-                this.destinationPath('package.json'), {
-                    name: this.props.name
-                }
             );
             this.fs.copyTpl(
                 this.templatePath('%.gitignore'),
@@ -218,7 +215,6 @@ module.exports = yeoman.generators.Base.extend({
                 this.destinationPath('workspace/webpackage/manifest.webpackage'),
                 this.props
             );
-
 
             /** Now copy all the other stuff.
              * @see https://github.com/isaacs/node-glob#options
@@ -237,8 +233,8 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     install: function() {
-        this.log('\nRunning npm install ...');
-        this.npmInstall();
+        this.log('\nInstalling IDE dependencies ...');
+        this.spawnCommand('npm', ['install'], {cwd: 'ide'})
     },
 
     end: function() {
