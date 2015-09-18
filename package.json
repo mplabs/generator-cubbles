@@ -39,6 +39,7 @@
         "grunt-available-tasks": "~0.5.0",
         "chalk": "~1.1.0",
         "grunt-prompt": "^1.3.0",
+        "grunt-http-server": "^1.0.0",
         "webpackage-uploader": "https://npm.webblebase.net:444/webpackage-uploader/-/webpackage-uploader-1.2.2.tgz",
         "webpackage-document-api": "git+https://pmt.incowia.de/webble/r/client/utilities/webpackage-document-api.git#modelVersion-8"
     },
