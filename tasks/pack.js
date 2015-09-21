@@ -2,18 +2,13 @@ module.exports = function(grunt) {
     'use strict';
 
     grunt.registerTask('pack', 'Pack your files for distribution (internally used for deploy* tasks)', [
-        'clean:dist',
+        'clean:pack',
      //   'optimize',
-        'copy:static',
-        'copy:component',
-        'string-replace:crc_url',
-        'updateWebappManifest',
-        'find-in-script-tag:index.html',
-        'find-in-json:manifest.cubx'
+        'copy:dist'
     ]);
 
     // intemediate task to optimize resources
-    grunt.registerTask('optimize', [
+/*    grunt.registerTask('optimize', [
         'copy:build',
         'useminPrepare',
         'concat:generated',
@@ -22,4 +17,5 @@ module.exports = function(grunt) {
         'htmlmin',
         'usemin'
     ]);
+*/
 };

@@ -3,62 +3,32 @@
 'use strict';
 
 module.exports.tasks = {
+
+    clean: {
+        options: {force: true},
+        pack: ['<%= param.dst %>/']
+    },
+
     copy: {
-        backgroundJs: {
+        build: {
             files: [
                 {
                     expand: true,
-                    cwd: '<%= param.src %>/',
-                    src: 'js/background.js',
-                    dest: '<%= param.dst %>/'
+                    dot: true,
+                    cwd: '<%= param.src %>',
+                    dest: '<%= param.build %>',
+                    src: ['**']
                 }]
         },
-        installPage: {
+        dist: {
             files: [
                 {
                     expand: true,
-                    cwd: 'helper/',
-                    src: 'install.html',
-                    dest: '<%= param.pack %>/'
+                    dot: true,
+                    cwd: '<%= param.src %>',
+                    dest: '<%= param.dst %>',
+                    src: ['**']
                 }]
-        }
-    },
-    clean: {
-        pack: ['<%= param.dst %>/test']
-    },
-    fileExists: {
-        pack: [
-            '<%= param.dst %>/manifest.webpackage',
-            '<%= param.dst %>/manifest.cubx',
-            '<%= param.dst %>/dependency.json',
-            '<%= param.dst %>/manifest.component',
-            '<%= param.dst %>/style/app.min.css'
-        ]
-    },
-    'string-replace': {
-        crc_url: {
-            files: [
-                {
-                    expand: true,
-                    cwd: '<%= param.dst %>/',
-                    src: 'index.html',
-                    dest: '<%= param.dst %>/'
-                }],
-            options: {
-                replacements: [
-                    {
-                        //if developed directly against database (deprecated)
-                        //e.g. http://boot2docker.me:5984/webpackage-store/cubx.core.crc-loader...
-                        pattern: /(https?:\/\/[\w\.\-]*:\d{0,4}\/[\w\d\.\-]*\/)(cubx.core.crc-loader)/ig,
-                        replacement: '../$2'
-                    },
-                    {
-                        //if developed against the gateway (recommended)
-                        //e.g. http://boot2docker.me/cubx.core.crc-loader...
-                        pattern: /(https?:\/\/[\w\.\-]*\/)(cubx.core.crc-loader)/ig,
-                        replacement: '/$2'
-                    }]
-            }
         }
     }
 };

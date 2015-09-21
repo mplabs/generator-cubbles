@@ -7,15 +7,17 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
     grunt.loadTasks('tasks');
 
+    var activeWebPackage = grunt.file.readJSON('../workspace/.workspace').activeWebPackage;
     // Load grunt configurations
     var options = {
         ide: grunt.file.readJSON('package.json'),
-        manifestWebpackage: grunt.file.readJSON('../workspace/webpackage/manifest.webpackage'),
+        workspace: grunt.file.readJSON('../workspace/.workspace'),
+        manifestWebpackage: grunt.file.readJSON('../workspace/' + activeWebPackage +'/manifest.webpackage'),
         param: { // Project settings
-            src: '../workspace/webpackage',
-            build: '../workspace/webpackage_build',
-            pack: '../workspace/webpackage_pack',
-            dst: '../workspace/webpackage_dist',
+            src: '../workspace/' + activeWebPackage,
+            build: '../workspace/' + activeWebPackage + '_build',
+            pack: '../workspace/' + activeWebPackage + '_pack',
+            dst: '../workspace/' + activeWebPackage + '_dist',
             tmp: '.tmp'
         },
         config: { // set default configs location

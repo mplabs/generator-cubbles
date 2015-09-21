@@ -37,26 +37,7 @@ module.exports.tasks = {
 
     copy: {
         // Copies all files into build directory for vulcanization
-        build: {
-            files: [
-                {
-                    expand: true,
-                    dot: true,
-                    cwd: '<%= param.src %>',
-                    dest: '<%= param.build %>',
-                    src: ['**']
-                }]
-        },
-        dist: {
-            files: [
-                {
-                    expand: true,
-                    dot: true,
-                    cwd: '<%= param.src %>',
-                    dest: '<%= param.dst %>',
-                    src: ['**']
-                }]
-        },
+
         static: {
             files: [
                 {
@@ -125,24 +106,13 @@ module.exports.tasks = {
                     src: ['**/*.json', '!**/bower.json', '!**/package.json'],
                     dest: '<%= param.dst %>/'
                 }]
-        },
-        component: {
-            files: [
-                {
-                    /* copy locales */
-                    expand: true,
-                    cwd: '<%= param.src %>/',
-                    src: ['component/**/*.js', 'component/**/*.css'],
-                    dest: '<%= param.dst %>/'
-                }
-            ]
         }
 
     },
     clean: {
         dist: [
             '<%= param.dst %>/', '<%= param.tmp %>/',
-            '<%= param.build %>/', '<%= param.pack %>/', '<%= param.www %>'],
+            '<%= param.build %>/', '<%= param.pack %>/'],
         docs: ['docs/'],
         tests: ['<%= param.dst %>/test']
     },
