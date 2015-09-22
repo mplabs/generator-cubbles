@@ -211,8 +211,8 @@ module.exports = yeoman.generators.Base.extend({
                 this.props
             );
             this.fs.copyTpl(
-                this.templatePath('workspace/webpackage/%manifest.webpackage'),
-                this.destinationPath('workspace/webpackage/manifest.webpackage'),
+                this.templatePath('workspace/org.mygroup.mywebpackage/%manifest.webpackage'),
+                this.destinationPath('workspace/org.mygroup.mywebpackage/manifest.webpackage'),
                 this.props
             );
 
@@ -233,8 +233,8 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     install: function() {
-        this.log('\nInstalling IDE dependencies ...');
-        this.spawnCommandSync('npm', ['install'], {cwd: 'ide'})
+        this.log('\nInstalling DevTools dependencies ...');
+        this.spawnCommandSync('npm', ['install'], {cwd: 'devtools'})
     },
 
     end: function() {
