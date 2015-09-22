@@ -252,7 +252,12 @@ module.exports = yeoman.generators.Base.extend({
             '\n' +
             'FINALLY: Run \'grunt deploy\' to deploy the webpackage into the Cubixx-Base of your choice.' +
             '\n' +
-            'Note: type \'grunt\' to list all available grunt tasks '
+            'Note: Anytime within the \'devtools\' folder: type \'grunt\' to get a list of all recommended grunt tasks.' +
+            '\n\n'
         );
+        this.log(
+            'Now running grunt the fist time to initialize the project for you:'
+        );
+        this.spawnCommandSync('grunt', [],{cwd: 'devtools'})
     }
 });
