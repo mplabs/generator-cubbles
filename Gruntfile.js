@@ -2,15 +2,17 @@ module.exports = function(grunt) {
     'use strict';
 
     var chalk = require('chalk');
-
+    // Validate the workspace config (../workspace/.workspace)
+    require('./grunt-validate-workspace.js')(grunt);
     // Load grunt tasks.
     require('load-grunt-tasks')(grunt);
+    // Load devTools tasks.
     grunt.loadTasks('tasks');
 
-    var activeWebPackage = grunt.file.readJSON('../workspace/.workspace').activeWebPackage;
     // Load grunt configurations
+    var activeWebPackage = grunt.file.readJSON('../workspace/.workspace').activeWebPackage;
     var options = {
-        ide: grunt.file.readJSON('package.json'),
+        devtools: grunt.file.readJSON('package.json'),
         workspace: grunt.file.readJSON('../workspace/.workspace'),
         manifestWebpackage: grunt.file.readJSON('../workspace/' + activeWebPackage +'/manifest.webpackage'),
         param: { // Project settings
@@ -27,12 +29,4 @@ module.exports = function(grunt) {
     var configs = require('load-grunt-configs')(grunt, options);
     // Define the configuration for all the tasks
     grunt.initConfig(configs);
-
-
-
-
-
-
-
-
 };
