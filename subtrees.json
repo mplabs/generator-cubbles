@@ -1,5 +1,5 @@
 {
-  "cubx.devtools" : {
+  "devtools" : {
     "localFolder": "generators/webpackage-ng/templates/devtools",
     "repository": "https://pmt.incowia.de/webble/r/client/cubixx-coder-devtools.git",
     "branch": "master"
