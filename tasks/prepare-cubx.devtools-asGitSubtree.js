@@ -34,7 +34,7 @@ module.exports = function(grunt) {
             var subtreesFilename = '../../subtrees.json';
             var subtreesFileContent = {
                 "devtools": {
-                    "localFolder": 'cubx.devtools-mappedIn',
+                    "localFolder": 'devtools-mappedIn',
                     "repository": 'https://pmt.incowia.de/webble/r/client/cubixx-coder-devtools.git',
                     "branch": "master"
                 }
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
             grunt.file.write(subtreesFilename, subtreesFileContent);
 
             // show usage notes
-            grunt.log.writeln('\nSubtreeConfig saved to ' + subtreesFilename + '.');
+            grunt.log.writeln('\nSubtreeConfig saved to ' + workDirectory + subtreesFilename + '.');
             grunt.log.writeln('Now run:');
             grunt.log.writeln('\'$ git-subtree init\' to include the subtree.');
             grunt.log.writeln('\'$ git-subtree pull\' to update the subtree.');
