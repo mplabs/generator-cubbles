@@ -11,15 +11,17 @@ module.exports = yeoman.generators.Base.extend({
          * regex definitions for input validation (note: use http://regexpal.com/ for testing)
          */
         this.webpackagename_regex = /^([a-z0-9]+)([-\.a-z0-9]*)([a-z0-9])+$/;
-        this.groupid_regex = /^([a-z0-9-_]+)(\.[a-z0-9-_]+)*$/;
-        this.peopleName_regex = /^(([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?\s)+([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?$/;
+        this.groupid_regex =
+            /^([a-z0-9]+||([a-z0-9]+[a-z0-9-][a-z0-9]+)*)(\.([a-z0-9]+||([a-z0-9]+[a-z0-9-][a-z0-9]+)*))*$/;
+        this.peopleName_regex =
+            /^(([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?[\.]?\s)+([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?$/;
         // for the url-regex @see https://mathiasbynens.be/demo/url-regex
         this.url_regexByStephanhay = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
         this.email_regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
         //
         this.config.defaults({
             webPackageType: 'webutil'
-        })
+        });
     },
     constructor: function() {
         yeoman.generators.Base.apply(this, arguments);
@@ -51,7 +53,7 @@ module.exports = yeoman.generators.Base.extend({
                 default: this.appname,
                 validate: function(input) {
                 if (!this.webpackagename_regex.test(input)) {
-                    return "Please provide a value with a valid pattern (" + this.webpackagename_regex + ").";
+                    return 'Please provide a value with a valid pattern (' + this.webpackagename_regex + ').';
                 }
                 return true;
             }.bind(this)
@@ -62,7 +64,7 @@ module.exports = yeoman.generators.Base.extend({
                 default: 'org.example',
                 validate: function(input) {
                     if (!this.groupid_regex.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.groupid_regex + ").";
+                        return 'Please provide a value with a valid pattern (' + this.groupid_regex + ').';
                     }
                     return true;
                 }.bind(this)
@@ -77,7 +79,7 @@ module.exports = yeoman.generators.Base.extend({
                 store: true,
                 validate: function(input) {
                     if (!this.peopleName_regex.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.peopleName_regex + ").";
+                        return 'Please provide a value with a valid pattern (' + this.peopleName_regex + ').';
                     }
                     return true;
                 }.bind(this)
@@ -88,7 +90,7 @@ module.exports = yeoman.generators.Base.extend({
                 store: true,
                 validate: function(input) {
                     if (!this.email_regex.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.email_regex + ").";
+                        return 'Please provide a value with a valid pattern (' + this.email_regex + ').';
                     }
                     return true;
                 }.bind(this)
@@ -99,7 +101,7 @@ module.exports = yeoman.generators.Base.extend({
                 default: 'none',
                 validate: function(input) {
                     if (input != 'none' && !this.url_regexByStephanhay.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.url_regexByStephanhay + ").";
+                        return 'Please provide a value with a valid pattern (' + this.url_regexByStephanhay + ').';
                     }
                     return true;
                 }.bind(this)
@@ -124,7 +126,7 @@ module.exports = yeoman.generators.Base.extend({
             (this.props.webPackageAuthorUrl && this.props.webPackageAuthorUrl != 'none') ?
             (author.url = this.props.webPackageAuthorUrl) : null;
             // add this to the props to make it available for the template processing
-            this.props.webpackageAuthors = JSON.stringify([author])
+            this.props.webpackageAuthors = JSON.stringify([author]);
         },
 
         projectfiles: function() {

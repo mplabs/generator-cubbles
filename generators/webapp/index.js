@@ -12,9 +12,11 @@ module.exports = yeoman.generators.Base.extend({
          */
         this.webpackagename_regex = /^([a-z0-9]+)(\-[a-z0-9]+)+$/;
         this.webappname_regex = /^([A-Za-z0-9 ]+)(\-[A-Za-z0-9 ]+)*$/;
-        this.groupid_regex = /^([a-z0-9-_]+)(\.[a-z0-9-_]+)*$/;
+        this.groupid_regex =
+            /^([a-z0-9]+||([a-z0-9]+[a-z0-9-][a-z0-9]+)*)(\.([a-z0-9]+||([a-z0-9]+[a-z0-9-][a-z0-9]+)*))*$/;
         this.version_regex = /^(\d+)(\.[\d]+)*(-SNAPSHOT)?$/;
-        this.peopleName_regex = /^(([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?\s)+([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?$/;
+        this.peopleName_regex =
+            /^(([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?[\.]?\s)+([A-Za-zäöüÄÖÜ]+[\-\']?)*([A-Za-zäöüÄÖÜ]+)?$/;
         // for the url-regex @see https://mathiasbynens.be/demo/url-regex
         this.url_regexByStephanhay = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
         this.email_regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -53,7 +55,7 @@ module.exports = yeoman.generators.Base.extend({
                 default: this.webapackageName,
                 validate: function(input) {
                     if (!this.webpackagename_regex.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.webpackagename_regex + ").";
+                        return 'Please provide a value with a valid pattern (' + this.webpackagename_regex + ').';
                     }
                     return true;
                 }.bind(this)
@@ -64,7 +66,7 @@ module.exports = yeoman.generators.Base.extend({
                 default: this.appname,
                 validate: function(input) {
                     if (!this.webappname_regex.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.webappname_regex + ").";
+                        return 'Please provide a value with a valid pattern (' + this.webappname_regex + ').';
                     }
                     return true;
                 }.bind(this)
@@ -75,7 +77,7 @@ module.exports = yeoman.generators.Base.extend({
                 default: 'org.example',
                 validate: function(input) {
                     if (!this.groupid_regex.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.groupid_regex + ").";
+                        return 'Please provide a value with a valid pattern (' + this.groupid_regex + ').';
                     }
                     return true;
                 }.bind(this)
@@ -90,7 +92,7 @@ module.exports = yeoman.generators.Base.extend({
                 store: true,
                 validate: function(input) {
                     if (!this.peopleName_regex.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.peopleName_regex + ").";
+                        return 'Please provide a value with a valid pattern (' + this.peopleName_regex + ').';
                     }
                     return true;
                 }.bind(this)
@@ -101,7 +103,7 @@ module.exports = yeoman.generators.Base.extend({
                 store: true,
                 validate: function(input) {
                     if (!this.email_regex.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.email_regex + ").";
+                        return 'Please provide a value with a valid pattern (' + this.email_regex + ').';
                     }
                     return true;
                 }.bind(this)
@@ -112,7 +114,7 @@ module.exports = yeoman.generators.Base.extend({
                 default: 'none',
                 validate: function(input) {
                     if (input != 'none' && !this.url_regexByStephanhay.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.url_regexByStephanhay + ").";
+                        return 'Please provide a value with a valid pattern (' + this.url_regexByStephanhay + ').';
                     }
                     return true;
                 }.bind(this)
@@ -120,10 +122,10 @@ module.exports = yeoman.generators.Base.extend({
                 type: 'input',
                 name: 'devBaseUrl',
                 message: 'index.html: Which Cubixx-Base do you want to load dependencies from (at dev time)?',
-                default: "https://webblebase.net",
+                default: 'https://webblebase.net',
                 validate: function(input) {
                     if (!this.url_regexByStephanhay.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.version_regex + ").";
+                        return 'Please provide a value with a valid pattern (' + this.url_regexByStephanhay + ').';
                     }
                     return true;
                 }.bind(this)
@@ -131,10 +133,10 @@ module.exports = yeoman.generators.Base.extend({
                 type: 'input',
                 name: 'crcLoaderVersion',
                 message: 'index.html: Which Version of CRC-Loader shall be refered to?',
-                default: '1.1',
+                default: '1.2',
                 validate: function(input) {
                     if (!this.version_regex.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.version_regex + ").";
+                        return 'Please provide a value with a valid pattern (' + this.version_regex + ').';
                     }
                     return true;
                 }.bind(this)
@@ -142,10 +144,10 @@ module.exports = yeoman.generators.Base.extend({
                 type: 'input',
                 name: 'crcVersion',
                 message: 'manifest.cubx: Which Version of CRC shall be refered to?',
-                default: '1.1',
+                default: '1.2',
                 validate: function(input) {
                     if (!this.version_regex.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.version_regex + ").";
+                        return 'Please provide a value with a valid pattern (' + this.version_regex + ').';
                     }
                     return true;
                 }.bind(this)
@@ -153,10 +155,10 @@ module.exports = yeoman.generators.Base.extend({
                 type: 'input',
                 name: 'cifVersion',
                 message: 'manifest.cubx: Which Version of CIF shall be refered to?',
-                default: '1.1',
+                default: '1.2',
                 validate: function(input) {
                     if (!this.version_regex.test(input)) {
-                        return "Please provide a value with a valid pattern (" + this.version_regex + ").";
+                        return 'Please provide a value with a valid pattern (' + this.version_regex + ').';
                     }
                     return true;
                 }.bind(this)
@@ -181,7 +183,7 @@ module.exports = yeoman.generators.Base.extend({
             (this.props.webPackageAuthorUrl && this.props.webPackageAuthorUrl != 'none') ?
             (author.url = this.props.webPackageAuthorUrl) : null;
             // add this to the props to make it available for the template processing
-            this.props.webpackageAuthors = JSON.stringify([author])
+            this.props.webpackageAuthors = JSON.stringify([author]);
         },
 
         projectfiles: function() {
@@ -240,7 +242,6 @@ module.exports = yeoman.generators.Base.extend({
                 this.destinationPath('public/dependency.json'),
                 this.props
             );
-
 
             /** Now copy all the other stuff.
              * @see https://github.com/isaacs/node-glob#options
