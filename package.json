@@ -28,7 +28,8 @@
     "dependencies": {
         "yeoman-generator": "^0.20.0",
         "chalk": "^1.0.0",
-        "yosay": "^1.0.2"
+        "yosay": "^1.0.2",
+        "shelljs": "^0.5.3"
     },
     "devDependencies": {
         "mocha": "*"

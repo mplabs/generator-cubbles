@@ -1,6 +1,0 @@
-node_modules
-.gitignore
-.tmp
-build
-dist
-pack

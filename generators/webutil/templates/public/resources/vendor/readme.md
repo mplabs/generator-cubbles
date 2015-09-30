@@ -1,1 +1,0 @@
-Place 3rd-Party files into this directory. Doing so, they are excluded from validation automatically.

@@ -1,6 +1,0 @@
-{
-  "resources": [
-    "./component/<%= name %>.css"
-  ],
-  "dependencies": []
-}
