@@ -1,3 +1,4 @@
+var chalk = require('chalk');
 module.exports = function(grunt) {
     'use strict';
     grunt.registerTask('initGitInfo', 'Explains how to setup a git repo for this webpackage.', function() {

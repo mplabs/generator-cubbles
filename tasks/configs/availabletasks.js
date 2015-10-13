@@ -7,8 +7,8 @@ module.exports.tasks = {
         tasks: {
             options: {
                 filter: 'include',
-                tasks: ['httpServer', 'deploy', 'deployLocal', 'deployIntegration', 'generateDoc', 'validateSources', 'validateManifestWebPackage', 'initGitInfo'],
-                sort: false
+                tasks: ['+httpServer-start', '+webpackage-deploy', '+webpackage-deployLocal', '+webpackage-deployIntegration', '+webpackage-validateManifestFile', '+workspace-createWebPackage'],
+                sort: true
             }
         }
     }

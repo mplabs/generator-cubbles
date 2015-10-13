@@ -41,7 +41,8 @@
         "grunt-prompt": "^1.3.0",
         "grunt-http-server": "^1.0.0",
         "shelljs": "^0.5.3",
-        "webpackage-uploader": "https://npm.webblebase.net:444/webpackage-uploader/-/webpackage-uploader-1.2.2.tgz",
+        "fs.extra": "^1.3.2",
+        "webpackage-uploader": "git+https://pmt.incowia.de/webble/r/client/utilities/webpackage-uploader.git#modelVersion-8",
         "webpackage-document-api": "git+https://pmt.incowia.de/webble/r/client/utilities/webpackage-document-api.git#modelVersion-8"
     },
     "repository": {

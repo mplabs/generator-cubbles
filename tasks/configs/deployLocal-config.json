@@ -5,6 +5,6 @@
   },
   "proxy": "",
   "path": {
-    "root": "../workspace/webpackage_dist"
+    "root": "<%= param.dst %>"
   }
 }

@@ -13,7 +13,7 @@ module.exports = function(grunt, workspacePath) {
     var workspaceConfig = grunt.file.readJSON(workspaceConfigFile);
     //var activeWP = workspaceConfig.activeWebPackage;
     if(('activeWebPackage' in workspaceConfig) && typeof workspaceConfig.activeWebPackage === 'string' && workspaceConfig.activeWebPackage.length > 0) {
-        grunt.log.subhead('Currently active WebPackage: ' + workspaceConfig.activeWebPackage + ' (@see ' + workspaceConfigFile + ')');
+        grunt.log.subhead('Currently mapped WebPackage: ' + workspaceConfig.activeWebPackage + ' (@see ' + workspaceConfigFile + ')');
     } else {
         grunt.log.warn('Currently there is NO active WebPackage configured. Please check \'' + workspaceConfigFile + '\'');
     }
@@ -32,7 +32,7 @@ module.exports = function(grunt, workspacePath) {
     }
     //
     var manifest = grunt.file.readJSON(manifestFilePath);
-    var webpackageCommonName = manifest.groupId + '.' + manifest.name;
+    var webpackageCommonName = manifest.groupId ? manifest.groupId + '.' + manifest.name : manifest.name;
     if (activeWebPackage != webpackageCommonName) {
         grunt.log.error('Expected the folder to be named \'' + webpackageCommonName + '\'. Running a fix ...');
         // rename the folder
@@ -47,6 +47,9 @@ module.exports = function(grunt, workspacePath) {
         // update .workspace file to point to the new folder name
         workspaceConfig.activeWebPackage = webpackageCommonName;
         grunt.file.write(workspaceConfigFile, JSON.stringify(workspaceConfig, null, 2));
+        // TODO: Create 'bower-install' task
+        // TODO: Update 'workspace/.bowerrc' File
+        //
         grunt.log.error('Fixed.');
     }
 };

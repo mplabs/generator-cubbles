@@ -1,0 +1,22 @@
+{
+  "name": "webpackage-template",
+  "groupId": "",
+  "version": "0.1.0-SNAPSHOT",
+  "modelVersion": "8.0.0",
+  "docType": "webpackage",
+  "author": {
+    "name": "John Doe",
+    "email": "john.doe@example.org"
+  },
+  "license": "MIT",
+  "keywords": [],
+  "man": [],
+  "entrypoints": {
+    "doc": "_doc/readme.html"
+  },
+  "artifacts": {
+    "app": {
+      "type": "webapp"
+    }
+  }
+}

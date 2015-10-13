@@ -1,4 +1,5 @@
 var fs = require('fs');
+var path = require('path');
 module.exports = function(grunt) {
     'use strict';
 
@@ -14,11 +15,14 @@ module.exports = function(grunt) {
     grunt.loadTasks('tasks');
 
     // Load grunt configurations
-    var activeWebPackage = grunt.file.readJSON(workspacePath + '.workspace').activeWebPackage;
+    var workspaceConfigPath = path.join(workspacePath, '.workspace')
+    var activeWebPackage = grunt.file.readJSON(workspaceConfigPath).activeWebPackage;
     var manifestFile = workspacePath + activeWebPackage + '/manifest.webpackage';
     var options = {
         devtools: grunt.file.readJSON('package.json'),
-        workspace: grunt.file.readJSON(workspacePath + '.workspace'),
+        workspaceConfigPath : workspaceConfigPath,
+        workspaceConfig: grunt.file.readJSON(workspaceConfigPath),
+        workspacePath: workspacePath,
         param: { // Project settings
             src: workspacePath + activeWebPackage,
             build: workspacePath + activeWebPackage + '_build',

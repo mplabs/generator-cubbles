@@ -1,20 +1,23 @@
 module.exports = function(grunt) {
     'use strict';
-    grunt.registerTask('validateManifestWebPackage', 'validate webpackage manifest',function() {
-        var WebpackageDocumentValidator = require('webpackage-document-api');
-        var validator = new WebpackageDocumentValidator();
-        try {
-            var _webPackageDoc = grunt.config.get('manifestWebpackage');
-            console.log('WebPackage name:', _webPackageDoc.name);
-            validator.validateWebpackageManifest(_webPackageDoc);
-        } catch (myError) {
-            for (var i = 0; i < myError.tv4errors.length; i++) {
-                delete myError.tv4errors[i].code;
-                delete myError.tv4errors[i].subErrors;
-                delete myError.tv4errors[i].stack;
-            }
-            console.log('Schema validation failed: ', myError.tv4errors);
-            grunt.fail.error(myError);
-        }
+    grunt.registerTask('+webpackage-validateManifestFile', 'Validate \'manifest.webpackage\' file.',function() {
+        var WebpackageDocument = require('webpackage-document-api/public/lib/WebPackageDocument');
+        var doc = new WebpackageDocument(grunt.config.get('manifestWebpackage'));
+        //
+        var onSuccess = function() {
+            //
+        };
+        var onUnsupportedModelVersionError = function(error) {
+            grunt.fail.fatal(error);
+        };
+        var onValidationError = function(errors) {
+            errors.forEach(function(error){grunt.log.writeln('Validation Error: ' + error.dataPath + ' >>> ' + error.message);})
+            //for (var i = 0; i < errors.length; i++) {
+            //    grunt.log.writeln(errors[i]);
+            //}
+            //grunt.log.writeln(error);
+            grunt.fail.fatal('Validation failed.');
+        };
+        doc.validate(onSuccess, onUnsupportedModelVersionError, onValidationError);
     });
 };
