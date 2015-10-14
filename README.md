@@ -1,13 +1,55 @@
-## cubixx-coder-devtools
+# cubixx-coder-devtools
 
-**DeveloperTools for Coders**
+The **"Coder DeveloperTools"** (alias "DevTools") are a collection of grunt -tasks to simplify development and deployment of cubixx-webpackages.
+If you have created your cubx-project using the yeoman generator ( *$ yo cubixx* ), you already have a DevTools -version in place. You can use it as-is to develop your webpackage(s).
 
+## How to map the latest DeveloperTools into your project
+If you want to *map-in* the latest DevTools (with bugfixes, improvements and/or new features), read here ...
 
-## How to include the DeveloperTools into your project
-We recommend using the `git subtree` -feature to add and (if needed) to update the DeveloperTools. The basic principle is, that a 'copy' of this project will be part (a subtree) of your project-file-tree.
+We use the *"git subtree"* -feature to add and (if needed) to update the DeveloperTools. The basic principle is, that a 'copy' of this project will be part (a subtree) of your project-file-tree.
 You find an overview on how to deal with git-subtrees at <http://blogs.atlassian.com/2013/05/alternatives-to-git-submodule-git-subtree/>.
 
-We recommend the following steps:
+### Map the DevTools using the 'git-subtree' package
+This guide makes use of the npm-package <https://www.npmjs.com/package/git-subtree>. In combination with a grunt -task within in your *original* DevTools, it simplifies the whole thing a bit: 
+
+1. Init the config using the included grunt-task: 
+    
+        $ cd devtools
+        $ grunt prepare-cubx.devtools-asGitSubtree
+        
+2. Map the DevTools into a separate folder "devtools-mappedIn": 
+    
+        # change into your projects root-directory
+        $ cd ..
+        $ git-subtree init
+        
+3. Install the dependencies and you are ready to rock: 
+    
+        # change into your new devtools-folder
+        $ cd devtools-mappedIn
+        
+        # install the deps
+        $ npm install
+        
+        # now run your first command
+        $ grunt 
+        
+**And then, each time you want to merge in the latest changes of the DevTools:**
+
+        # change into your projects root-directory 
+        $ cd ..
+        
+        # fetch and merge the latest changes
+        $ git-subtree pull devtools
+  
+
+Note: The the config used for all the *git-subtree* commands is editable in *subtrees.json* within your projects root-directory.
+  
+    
+
+
+### Map the DevTools using git-commands only
+You can do the same using native git-commands only - by doing the following steps:
 
 1. Add this repo as a remote-repository to your project´s git config: 
     

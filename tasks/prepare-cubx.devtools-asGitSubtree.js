@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 
             // write config for git-subtree command
             sh.cd(workDirectory);
-            var subtreesFilename = '../../subtrees.json';
+            var subtreesFilename = '../subtrees.json';
             var subtreesFileContent = {
                 "devtools": {
                     "localFolder": 'devtools-mappedIn',
@@ -39,10 +39,10 @@ module.exports = function(grunt) {
                     "branch": "master"
                 }
             };
-            grunt.file.write(subtreesFilename, subtreesFileContent);
+            grunt.file.write(subtreesFilename, subtreesFileContent, null, 2);
 
             // show usage notes
-            grunt.log.writeln('\nSubtreeConfig saved to ' + workDirectory + subtreesFilename + '.');
+            grunt.log.writeln('\nSubtreeConfig saved to ' + workDirectory + '/' + subtreesFilename + '.');
             grunt.log.writeln('Now run:');
             grunt.log.writeln('\'$ git-subtree init\' to include the subtree.');
             grunt.log.writeln('\'$ git-subtree pull\' to update the subtree.');
