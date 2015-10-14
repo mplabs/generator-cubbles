@@ -6,7 +6,7 @@ module.exports.tasks = {
     'http-server': {
         'dev': {
             // the server root directory
-            root: "../",
+            root: "../workspace/",
 
             // the server port
             // can also be written as a function, e.g.
