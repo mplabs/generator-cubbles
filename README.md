@@ -43,8 +43,9 @@ This guide makes use of the npm-package <https://www.npmjs.com/package/git-subtr
         $ git-subtree pull devtools
   
 
-Note: The the config used for all the *git-subtree* commands is editable in *subtrees.json* within your projects root-directory.
-  
+Note: 
+1. The the config used for all the *git-subtree* commands is editable in *subtrees.json* within your projects root-directory.
+2. If you clone a project with an already included subtree, do also execute all these steps if you want to be able to pull DevTools -changes by too.
     
 
 
