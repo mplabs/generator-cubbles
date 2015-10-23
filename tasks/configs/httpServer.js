@@ -6,7 +6,7 @@ module.exports.tasks = {
     'http-server': {
         'dev': {
             // the server root directory
-            root: "../workspace/",
+            root: '../workspace/',
 
             // the server port
             // can also be written as a function, e.g.
@@ -17,14 +17,14 @@ module.exports.tasks = {
             // If specified to, for example, "127.0.0.1" the server will
             // only be available on that ip.
             // Specify "0.0.0.0" to be available everywhere
-            host: "0.0.0.0",
+            host: '0.0.0.0',
 
             cache: 1,
             showDir: true,
             autoIndex: true,
 
             // server default file extension
-            ext: "html",
+            ext: 'html',
 
             // run in parallel with other tasks
             runInBackground: false,
@@ -36,7 +36,7 @@ module.exports.tasks = {
 
             // Proxies all requests which can't be resolved locally to the given url
             // Note this this will disable 'showDir'
-            proxy: "https://webblebase.net"
+            proxy: 'https://webblebase.net'
         }
     }
 }
