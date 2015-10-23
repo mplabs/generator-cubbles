@@ -1,9 +1,7 @@
 'use strict';
-var fs = require('fs');
-
-module.exports = function(grunt) {
-    var workspacePath = '../workspace/';
-    var alternativeWorkspacePath = './workspace/';
+module.exports = function(grunt, workspaceName) {
+    var workspacePath = '../' + workspaceName + '/';
+    var alternativeWorkspacePath = '../' + workspaceName + '/';
 
     if (grunt.file.isDir(workspacePath)) {
         return workspacePath;
