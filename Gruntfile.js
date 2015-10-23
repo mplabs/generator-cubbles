@@ -1,11 +1,8 @@
-var fs = require('fs');
+'use strict';
 var path = require('path');
 module.exports = function(grunt) {
-    'use strict';
-
-    var chalk = require('chalk');
     // Validate the workspace config (../workspace/.workspace)
-    var workspacePath = require('./grunt-detect-workspace.js')(grunt);
+    var workspacePath = require('./grunt-detect-workspace.js')(grunt, 'webpackages');
     // Validate the workspace config (../workspace/.workspace)
     require('./grunt-validate-workspace.js')(grunt, workspacePath);
 
@@ -15,7 +12,7 @@ module.exports = function(grunt) {
     grunt.loadTasks('tasks');
 
     // Load grunt configurations
-    var workspaceConfigPath = path.join(workspacePath, '.workspace')
+    var workspaceConfigPath = path.join(workspacePath, '.workspace');
     var activeWebPackage = grunt.file.readJSON(workspaceConfigPath).activeWebPackage;
     var manifestFile = workspacePath + activeWebPackage + '/manifest.webpackage';
     var options = {
@@ -35,7 +32,7 @@ module.exports = function(grunt) {
         }
     };
     if (grunt.file.isFile(manifestFile)) {
-        options.manifestWebpackage = grunt.file.readJSON(manifestFile)
+        options.manifestWebpackage = grunt.file.readJSON(manifestFile);
     }
     var configs = require('load-grunt-configs')(grunt, options);
     // Define the configuration for all the tasks

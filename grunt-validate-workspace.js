@@ -12,10 +12,13 @@ module.exports = function(grunt, workspacePath) {
      */
     var workspaceConfig = grunt.file.readJSON(workspaceConfigFile);
     //var activeWP = workspaceConfig.activeWebPackage;
-    if(('activeWebPackage' in workspaceConfig) && typeof workspaceConfig.activeWebPackage === 'string' && workspaceConfig.activeWebPackage.length > 0) {
-        grunt.log.subhead('Currently mapped WebPackage: ' + workspaceConfig.activeWebPackage + ' (@see ' + workspaceConfigFile + ')');
+    if (('activeWebPackage' in workspaceConfig) && typeof workspaceConfig.activeWebPackage === 'string' &&
+        workspaceConfig.activeWebPackage.length > 0) {
+        grunt.log.subhead('Currently mapped WebPackage: ' + workspaceConfig.activeWebPackage + ' (@see ' +
+            workspaceConfigFile + ')');
     } else {
-        grunt.log.warn('Currently there is NO active WebPackage configured. Please check \'' + workspaceConfigFile + '\'');
+        grunt.log.warn('Currently there is NO active WebPackage configured. Please check \'' + workspaceConfigFile +
+            '\'');
     }
 
     var activeWebPackage = workspaceConfig.activeWebPackage;
