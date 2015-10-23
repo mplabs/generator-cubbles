@@ -11,8 +11,8 @@
     },
     "excludeFiles": [
         "node_modules/**",
-        "public/**/vendor/**",
-        "public/test/**",
-        "public/test-results/**"
+        "**/vendor/**",
+        "**/test/**",
+        "**/test-results/**"
     ]
 }
