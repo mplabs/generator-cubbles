@@ -29,6 +29,13 @@
     "predef": [
         "require",
         "module",
-        "CubxPolymer"
+        "CubxPolymer",
+        "describe",
+        "it",
+        "before",
+        "beforeEach",
+        "after",
+        "afterEach",
+        "expect"
     ]
 }
