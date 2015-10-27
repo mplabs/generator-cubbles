@@ -15,8 +15,7 @@
     "doc": "_doc/readme.html"
   },
   "artifacts": {
-    "app": {
-      "type": "webapp"
-    }
+    "apps": [
+    ]
   }
 }

@@ -1,7 +1,7 @@
 'use strict';
 module.exports = function(grunt, workspaceName) {
     var workspacePath = '../' + workspaceName + '/';
-    var alternativeWorkspacePath = '../' + workspaceName + '/';
+    var alternativeWorkspacePath = './' + workspaceName + '/';
 
     if (grunt.file.isDir(workspacePath)) {
         return workspacePath;
