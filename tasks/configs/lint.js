@@ -55,7 +55,7 @@ module.exports.tasks = {
         strict: { // attach exclude file with prefix '!', ex: ![path]/main.css
             src: ['webpackage/**/*.css', '!webpackage/**/vendor/**']
         }
-    },
+    }
     //githooks: {
     //    all: {
     //        'pre-commit': '+validateSources'
