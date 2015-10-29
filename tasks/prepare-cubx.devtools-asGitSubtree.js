@@ -8,7 +8,6 @@ var sh = require('shelljs');
  * @param {object} grunt
  */
 module.exports = function(grunt) {
-
     grunt.registerTask('prepare-cubx.devtools-asGitSubtree',
         'prepare to map-in \'cubixx-coder-devtools\' from git via \'git subtree\'', function() {
             var workDirectory = sh.pwd();
