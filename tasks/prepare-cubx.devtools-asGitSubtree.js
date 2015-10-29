@@ -1,14 +1,14 @@
 /**
  * This prepares the current project to map-in the devTools from it's source repository.
  */
+'use strict';
 var sh = require('shelljs');
-var fs = require('fs');
 /**
  * This task prepares your project to map-in the 'cubixx-coder-devtools'
- * @param grunt
+ * @param {object} grunt
  */
 module.exports = function(grunt) {
-    'use strict';
+
     grunt.registerTask('prepare-cubx.devtools-asGitSubtree',
         'prepare to map-in \'cubixx-coder-devtools\' from git via \'git subtree\'', function() {
             var workDirectory = sh.pwd();
@@ -18,25 +18,25 @@ module.exports = function(grunt) {
             }
 
             // check, if project is under git source control
-//        sh.cd('..');
+            //        sh.cd('..');
             var gitStatus = sh.exec('git status', {silent: true}).code;
             if (gitStatus == 128) {
                 grunt.fail.fatal('Expected to find the directory \'' + sh.pwd() + '\' to be under git-source-control.');
             }
 
             // install git-subtree globally to have it available on project-level
-            var command_install_gitsubtree = 'npm install -g git-subtree';
-            grunt.log.writeln('Running ' + command_install_gitsubtree);
-            sh.exec(command_install_gitsubtree);
+            var commandInstallGitsubtree = 'npm install -g git-subtree';
+            grunt.log.writeln('Running ' + commandInstallGitsubtree);
+            sh.exec(commandInstallGitsubtree);
 
             // write config for git-subtree command
             sh.cd(workDirectory);
             var subtreesFilename = '../subtrees.json';
             var subtreesFileContent = {
-                "devtools": {
-                    "localFolder": 'devtools-mappedIn',
-                    "repository": 'https://pmt.incowia.de/webble/r/client/cubixx-coder-devtools.git',
-                    "branch": "master"
+                'devtools': {
+                    'localFolder': 'devtools-mappedIn',
+                    'repository': 'https://pmt.incowia.de/webble/r/client/cubixx-coder-devtools.git',
+                    'branch': 'master'
                 }
             };
             grunt.file.write(subtreesFilename, subtreesFileContent, null, 2);
@@ -47,7 +47,6 @@ module.exports = function(grunt) {
             grunt.log.writeln('\'$ git-subtree init\' to include the subtree.');
             grunt.log.writeln('\'$ git-subtree pull\' to update the subtree.');
             grunt.log.writeln('@see https://www.npmjs.com/package/git-subtree for detailed usage notes.');
-
 
         });
 };

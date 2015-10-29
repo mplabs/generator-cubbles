@@ -3,19 +3,19 @@ module.exports = function(grunt) {
 
     grunt.registerTask('pack', 'Pack your files for distribution (internally used for deploy* tasks)', [
         'clean:pack',
-     //   'optimize',
+        //   'optimize',
         'copy:dist'
     ]);
 
     // intemediate task to optimize resources
-/*    grunt.registerTask('optimize', [
-        'copy:build',
-        'useminPrepare',
-        'concat:generated',
-        'cssmin:generated',
-        'uglify:generated',
-        'htmlmin',
-        'usemin'
-    ]);
-*/
+    /*    grunt.registerTask('optimize', [
+     'copy:build',
+     'useminPrepare',
+     'concat:generated',
+     'cssmin:generated',
+     'uglify:generated',
+     'htmlmin',
+     'usemin'
+     ]);
+     */
 };

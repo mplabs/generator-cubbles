@@ -3,10 +3,10 @@
 'use strict';
 
 module.exports.tasks = {
-    jshint: { // exclude list defined in .jshintignore
+    jshint: {
         utils: {
             options: {
-                jshintrc: true
+                jshintrc: '.jshintrc'
             },
             src: [
                 '*.js',
@@ -15,10 +15,12 @@ module.exports.tasks = {
         },
         client: {
             options: {
-                jshintrc: true
+                jshintrc: '.jshintrc',
             },
             src: [
-                '<%= param.src %>/**/*.js'
+                '<%= param.src %>/**/*.js',
+                '!<%= param.src %>/**/vendor/**',
+                '!<%= param.src %>/**/test-results/**'
             ]
         }
     },
@@ -41,12 +43,7 @@ module.exports.tasks = {
     jsonlint: {
         files: {
             src: [
-                'package.json',
-                'upload-config.json',
-                '<%= param.src %>/manifest.webapp',
                 '<%= param.src %>/manifest.webpackage',
-                '<%= param.src %>/manifest.component',
-                '<%= param.src %>/manifest.cubx',
                 '<%= param.src %>/**/*.json'
             ]
         }
@@ -73,7 +70,7 @@ module.exports.tasks = {
     },
     githooks: {
         all: {
-            'pre-commit': 'validateSources'
+            'pre-commit': '+validateSources'
         }
     }
 };

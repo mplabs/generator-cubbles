@@ -48,9 +48,10 @@ module.exports = function(grunt) {
                             {
                                 config: 'wpGroupId',
                                 type: 'input',
-                                message: 'WebPackage groupId (expected to start with your reversed mail-domain OR keep it empty):',
+                                message: 'WebPackage groupId (expected to start with your reversed ' +
+                                'mail-domain OR keep it empty):',
                                 validate: function(input) {
-                                    if (input.length == 0) {
+                                    if (input.length === 0) {
                                         return true;
                                     }
                                     if (!regexLib.packageGroupId.test(input)) {
@@ -81,12 +82,14 @@ module.exports = function(grunt) {
 
                             // copy webpackage-template
                             // @see https://www.npmjs.com/package/fs.extra
-                            var wpCommonName = results.wpGroupId ? results.wpGroupId + '.' + results.wpName : results.wpName;
+                            var wpCommonName = results.wpGroupId ? results.wpGroupId + '.' + results.wpName :
+                                               results.wpName;
                             var src = './templates/webpackage';
                             var dest = path.join(grunt.config.get('workspacePath'), wpCommonName);
                             fsExtra.copyRecursive(src, dest, function(err) {
                                 if (err) {
-                                    grunt.fail.fatal('Failed to copy \'' + src + '\' to \'' + dest + '\' (' + err.message + ')');
+                                    grunt.fail.fatal('Failed to copy \'' + src + '\' to \'' + dest + '\' (' +
+                                        err.message + ')');
                                     return;
                                 }
                                 grunt.log.writeln(chalk.green('Successfully copied \'' + src + '\' to \'' + dest +
@@ -104,7 +107,8 @@ module.exports = function(grunt) {
                                 // update workspace-config
                                 var workspaceConfigJSON = grunt.config.get('workspaceConfig');
                                 workspaceConfigJSON.activeWebPackage = wpCommonName;
-                                grunt.file.write(grunt.config.get('workspaceConfigPath'), JSON.stringify(workspaceConfigJSON, null, 2));
+                                grunt.file.write(grunt.config.get('workspaceConfigPath'),
+                                    JSON.stringify(workspaceConfigJSON, null, 2));
 
                                 // now signal done
                                 done();

@@ -17,7 +17,7 @@ module.exports = function(grunt) {
     var manifestFile = workspacePath + activeWebPackage + '/manifest.webpackage';
     var options = {
         devtools: grunt.file.readJSON('package.json'),
-        workspaceConfigPath : workspaceConfigPath,
+        workspaceConfigPath: workspaceConfigPath,
         workspaceConfig: grunt.file.readJSON(workspaceConfigPath),
         workspacePath: workspacePath,
         param: { // Project settings
@@ -25,6 +25,7 @@ module.exports = function(grunt) {
             build: workspacePath + activeWebPackage + '_build',
             pack: workspacePath + activeWebPackage + '_pack',
             dst: workspacePath + activeWebPackage + '_dist',
+            doc: '../docs/' + activeWebPackage,
             tmp: '.tmp'
         },
         config: { // set default configs location

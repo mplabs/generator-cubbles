@@ -113,15 +113,7 @@ module.exports.tasks = {
         dist: [
             '<%= param.dst %>/', '<%= param.tmp %>/',
             '<%= param.build %>/', '<%= param.pack %>/'],
-        docs: ['docs/'],
+        docs: ['<%= param.doc %>/'],
         tests: ['<%= param.dst %>/test']
-    },
-    jsdoc: {
-        src: ['<%= param.src %>/**/*.js', 'README.md'],
-        options: {
-            destination: 'docs',
-            template: 'node_modules/grunt-jsdoc/node_modules/ink-docstrap/template',
-            configure: 'jsdoc-config.json'
-        }
     }
 };

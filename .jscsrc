@@ -4,15 +4,15 @@
     "validateLineBreaks": "LF",
     "validateIndentation": 4,
     "maximumLineLength": 120,
-    "validateJSDoc": {
+    "jsDoc": {
         "checkParamNames": true,
         "checkRedundantParams": true,
         "requireParamTypes": true
     },
     "excludeFiles": [
         "node_modules/**",
-        "**/vendor/**",
-        "**/test/**",
-        "**/test-results/**"
+        "../**/vendor/**",
+        "../**/test/**",
+        "../**/test-results/**"
     ]
 }
