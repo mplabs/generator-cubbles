@@ -56,21 +56,9 @@ module.exports.tasks = {
             src: ['webpackage/**/*.css', '!webpackage/**/vendor/**']
         }
     },
-    sloc: {
-        client: {
-            files: {
-                './': [
-                    '<%= param.src %>/*.html',
-                    '<%= param.src %>/js/*.js',
-                    '<%= param.src %>/style/*.css',
-                    '<%= param.src %>/test/unit/*.js'
-                ]
-            }
-        }
-    },
-    githooks: {
-        all: {
-            'pre-commit': '+validateSources'
-        }
-    }
+    //githooks: {
+    //    all: {
+    //        'pre-commit': '+validateSources'
+    //    }
+    //}
 };

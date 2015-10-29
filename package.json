@@ -30,7 +30,6 @@
     "grunt-json-replace": "^0.1.2",
     "grunt-jsonlint": "~1.0.4",
     "grunt-modify-json": "^0.1.1",
-    "grunt-sloc": "~0.5.2",
     "grunt-string-replace": "^1.0.0",
     "grunt-usemin": "~3.0.0",
     "grunt-http-server": "^1.0.0",

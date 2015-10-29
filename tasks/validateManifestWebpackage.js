@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         var onValidationError = function(errors) {
             errors.forEach(function(error) {
                 grunt.log.writeln('Validation Error: ' + error.dataPath + ' >>> ' + error.message);
-            })
+            });
             //for (var i = 0; i < errors.length; i++) {
             //    grunt.log.writeln(errors[i]);
             //}
