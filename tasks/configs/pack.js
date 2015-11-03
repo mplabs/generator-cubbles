@@ -10,17 +10,7 @@ module.exports.tasks = {
     },
 
     copy: {
-        build: {
-            files: [
-                {
-                    expand: true,
-                    dot: true,
-                    cwd: '<%= param.src %>',
-                    dest: '<%= param.build %>',
-                    src: ['**']
-                }]
-        },
-        dist: {
+        pack: {
             files: [
                 {
                     expand: true,

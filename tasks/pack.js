@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     grunt.registerTask('pack', 'Pack your files for distribution (internally used for deploy* tasks)', [
         'clean:pack',
         //   'optimize',
-        'copy:dist'
+        'copy:pack'
     ]);
 
     // intemediate task to optimize resources

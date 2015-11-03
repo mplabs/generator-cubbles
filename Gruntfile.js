@@ -2,7 +2,8 @@
 var path = require('path');
 module.exports = function(grunt) {
     // Validate the workspace config (../workspace/.workspace)
-    var workspacePath = require('./grunt-detect-workspace.js')(grunt, 'webpackages');
+    var workspaceName = 'webpackages';
+    var workspacePath = require('./grunt-detect-workspace.js')(grunt, workspaceName);
     // Validate the workspace config (../workspace/.workspace)
     require('./grunt-validate-workspace.js')(grunt, workspacePath);
 
@@ -16,16 +17,22 @@ module.exports = function(grunt) {
     var workspaceConfigPath = path.join(workspacePath, '.workspace');
     var activeWebPackage = grunt.file.readJSON(workspaceConfigPath).activeWebPackage;
     var manifestFile = workspacePath + activeWebPackage + '/manifest.webpackage';
+    var manifestFileAsJSON;
+    if (grunt.file.isFile(manifestFile)) {
+        manifestFileAsJSON = grunt.file.readJSON(manifestFile);
+    }
     var options = {
         devtools: grunt.file.readJSON('package.json'),
+        workspaceName: workspaceName,
+        workspacePath: workspacePath,
         workspaceConfigPath: workspaceConfigPath,
         workspaceConfig: grunt.file.readJSON(workspaceConfigPath),
-        workspacePath: workspacePath,
+        manifestWebpackage: manifestFileAsJSON,
         param: { // Project settings
             src: workspacePath + activeWebPackage,
-            build: workspacePath + activeWebPackage + '_build',
-            pack: workspacePath + activeWebPackage + '_pack',
-            dst: workspacePath + activeWebPackage + '_dist',
+            //build: workspacePath + activeWebPackage + '_build',
+            //pack: workspacePath + activeWebPackage + '_pack',
+            dst: workspacePath + activeWebPackage + '@' + manifestFileAsJSON.version,
             doc: '../docs/' + activeWebPackage,
             tmp: '.tmp'
         },
