@@ -9,9 +9,7 @@ module.exports.tasks = {
                 filter: 'include',
                 tasks: [
                     '+httpServer-start',
-                    '+webpackage-deploy',
-                    '+webpackage-deployLocal',
-                    '+webpackage-deployIntegration',
+                    '+webpackage-upload',
                     '+webpackage-validateManifestFile',
                     '+workspace-createWebPackage'],
                 sort: true

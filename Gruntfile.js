@@ -6,10 +6,12 @@ module.exports = function(grunt) {
     // Validate the workspace config (../workspace/.workspace)
     require('./grunt-validate-workspace.js')(grunt, workspacePath);
 
-    // Load grunt tasks.
-    require('load-grunt-tasks')(grunt);
+
     // Load devTools tasks.
     grunt.loadTasks('tasks');
+
+    // Load grunt tasks from plugins.
+    require('load-grunt-tasks')(grunt, {pattern: ['grunt-*', '@*/grunt-*', 'cubx-grunt-*', '@*/cubx-grunt-*']});
 
     // Load grunt configurations
     var workspaceConfigPath = path.join(workspacePath, '.workspace');

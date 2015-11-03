@@ -12,7 +12,7 @@
   "keywords": [],
   "man": [],
   "entrypoints": {
-    "doc": "_doc/readme.html"
+    "doc": "doc/readme.html"
   },
   "artifacts": {
     "apps": [
