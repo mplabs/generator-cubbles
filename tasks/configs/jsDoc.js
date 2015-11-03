@@ -3,7 +3,7 @@
 module.exports.tasks = {
     jsdoc: {
         src: [
-            '<%= param.src %>/**/*.js', 'README.md',
+            '<%= param.src %>/**/*.js', '<%= param.src %>/README.md',
             '!<%= param.src %>/**/vendor/**',
             '!<%= param.src %>/**/test/**',
             '!<%= param.src %>/**/test-results/**',

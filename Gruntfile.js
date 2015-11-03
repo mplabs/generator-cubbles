@@ -6,7 +6,6 @@ module.exports = function(grunt) {
     // Validate the workspace config (../workspace/.workspace)
     require('./grunt-validate-workspace.js')(grunt, workspacePath);
 
-
     // Load devTools tasks.
     grunt.loadTasks('tasks');
 
