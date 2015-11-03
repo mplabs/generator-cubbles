@@ -53,7 +53,7 @@ module.exports.tasks = {
             csslintrc: '.csslintrc'
         },
         strict: { // attach exclude file with prefix '!', ex: ![path]/main.css
-            src: ['webpackage/**/*.css', '!webpackage/**/vendor/**']
+            src: ['<%= param.src %>/**/*.css', '!<%= param.src %>/**/vendor/**', '!<%= param.src %>/**/test-results/**']
         }
     }
     //githooks: {
