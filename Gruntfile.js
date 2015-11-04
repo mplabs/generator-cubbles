@@ -40,9 +40,6 @@ module.exports = function(grunt) {
             src: 'tasks/configs/*.js'
         }
     };
-    if (grunt.file.isFile(manifestFile)) {
-        options.manifestWebpackage = grunt.file.readJSON(manifestFile);
-    }
     var configs = require('load-grunt-configs')(grunt, options);
     // Define the configuration for all the tasks
     grunt.initConfig(configs);
