@@ -18,7 +18,8 @@ module.exports = yeoman.generators.Base.extend({
         // Have Yeoman greet the user.
         this.log(yosay(
             'Welcome to the neat ' + chalk.red('Cubixx WebPackage') +
-            ' generator!' + '\n\n This will create a WebPackage-Project into a new or existing sub-folder of your choice.'
+            ' generator!' +
+            '\n\n This will create a "cubixx" project into a new or existing sub-folder of your choice.'
         ));
 
         var prompts = [
@@ -36,8 +37,7 @@ module.exports = yeoman.generators.Base.extend({
         }.bind(this));
     },
 
-    configuring: {
-    },
+    configuring: {},
 
     writing: {
         folder: function() {
@@ -70,7 +70,7 @@ module.exports = yeoman.generators.Base.extend({
 
     install: function() {
         this.log('\nInstalling DevTools dependencies ...');
-        this.spawnCommandSync('npm', ['install'], {cwd: 'devtools'})
+        this.spawnCommandSync('npm', ['install'], {cwd: 'devtools'});
     },
 
     end: function() {
@@ -78,12 +78,12 @@ module.exports = yeoman.generators.Base.extend({
             'Done'
         ));
         this.log(
-            'Note: Anytime within the \'devtools\' folder: Type \'grunt\' to get a list of all recommended grunt tasks.' +
-            '\n\n'
+            'Note: Anytime within the \'devtools\' folder: Type \'grunt\' to get a list of all ' +
+            'recommended grunt tasks.\n\n'
         );
         this.log(
             'Now I\'m running grunt to create your webpackage:'
         );
-        this.spawnCommandSync('grunt', ['+workspace_createWebPackage'], {cwd: 'devtools'})
+        this.spawnCommandSync('grunt', ['+workspace-createWebPackage'], {cwd: 'devtools'});
     }
 });
