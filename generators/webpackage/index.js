@@ -7,10 +7,6 @@ var sh = require('shelljs');
 module.exports = yeoman.generators.Base.extend({
 
     initializing: function() {
-        /**
-         * regex definitions for input validation (note: use http://regexpal.com/ for testing)
-         */
-        this.projectname_regex = /^([a-z][-a-z0-9]*)(\-[a-z0-9]+)+$/;
     },
     constructor: function() {
         yeoman.generators.Base.apply(this, arguments);
@@ -41,27 +37,6 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     configuring: {
-        manifestWebPackage: function() {
-            var author = {
-                name: this.props.webPackageAuthorName
-            };
-            this.props.webPackageAuthorEMail ? (author.email = this.props.webPackageAuthorEMail) : null;
-            (this.props.webPackageAuthorUrl && this.props.webPackageAuthorUrl != 'none') ?
-            (author.url = this.props.webPackageAuthorUrl) : null;
-            // add this to the props to make it available for the template processing
-            this.props.webpackageAuthors = JSON.stringify([author])
-        },
-
-        projectfiles: function() {
-            // this.fs.copy(
-            //   this.templatePath('.editorconfig'),
-            //   this.destinationPath('.editorconfig')
-            // );
-            // this.fs.copy(
-            //   this.templatePath('.jshintrc'),
-            //   this.destinationPath('.jshintrc')
-            // );
-        }
     },
 
     writing: {
@@ -74,11 +49,6 @@ module.exports = yeoman.generators.Base.extend({
             this.fs.copyTpl(
                 this.templatePath('%README.md'),
                 this.destinationPath('README.md'),
-                this.props
-            );
-            this.fs.copyTpl(
-                this.templatePath('%.gitignore'),
-                this.destinationPath('.gitignore'),
                 this.props
             );
 
@@ -112,8 +82,8 @@ module.exports = yeoman.generators.Base.extend({
             '\n\n'
         );
         this.log(
-            'Now running grunt the fist time to initialize the project/devtools for you:'
+            'Now I\'m running grunt to create your webpackage:'
         );
-        this.spawnCommandSync('grunt', [], {cwd: 'devtools'})
+        this.spawnCommandSync('grunt', ['+workspace_createWebPackage'], {cwd: 'devtools'})
     }
 });
