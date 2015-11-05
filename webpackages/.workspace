@@ -1,0 +1,11 @@
+{
+  "activeWebPackage": "cubx-test-devtools",
+  "webpackageUpload": {
+    "source": "<%= param.src %>",
+    "target": {
+      "url": "http://boot2docker.me",
+      "proxy": ""
+    },
+    "debug": true
+  }
+}
