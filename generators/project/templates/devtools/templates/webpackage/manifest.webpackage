@@ -11,9 +11,7 @@
   "license": "MIT",
   "keywords": [],
   "man": [],
-  "entrypoints": {
-    "doc": "doc/readme.html"
-  },
+  "runnables": [],
   "artifacts": {
     "apps": [
     ]
