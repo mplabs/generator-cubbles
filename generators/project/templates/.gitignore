@@ -16,9 +16,9 @@ results
 npm-debug.log
 node_modules/
 
-workspace/*_build/
-workspace/*_pack/
-workspace/*_dist/
+webpackages/*_build/
+webpackages/*_pack/
+webpackages/*_dist/
 **/.tmp/
 
-workspace/**/test-results
+webpackages/**/test-results
