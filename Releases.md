@@ -1,8 +1,7 @@
 # Releases:
 
 ## Version 0.9.1
-
-* Codestand nach mergen des Branches
+* Merged Branches
 
 ## Version 0.9
 * for modelVersion 7.0.0

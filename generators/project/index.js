@@ -78,12 +78,11 @@ module.exports = yeoman.generators.Base.extend({
             'Done'
         ));
         this.log(
-            'Note: Anytime within the \'devtools\' folder: Type \'grunt\' to get a list of all ' +
-            'recommended grunt tasks.\n\n'
+            'Note: Within the \'devtools\' folder, type \'grunt\' to get a list of the most important tasks.\n\n'
         );
         this.log(
-            'Now I\'m running grunt to create your webpackage:'
+            'Now I\'m running grunt the first time:'
         );
-        this.spawnCommandSync('grunt', ['+workspace-createWebPackage'], {cwd: 'devtools'});
+        this.spawnCommandSync('grunt', [], {cwd: 'devtools'});
     }
 });
