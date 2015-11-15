@@ -3,15 +3,15 @@ var path = require('path');
 var _ = require('lodash')
 
 module.exports = function(grunt) {
-    require('./core/cubixx.js')(grunt);
+    require('./utils/cubixx.js')(grunt);
     // Detect the workspace
     var workspaceName = 'webpackages';
-    var workspacePath = require('./core/grunt-detect-workspace.js')(grunt, workspaceName);
+    var workspacePath = require('./utils/detect-workspace.js')(grunt, workspaceName);
     var workspaceConfigPath = path.join(workspacePath, '.workspace');
     grunt.verbose.writeln('workspacePath: ' + workspacePath);
 
     // Validate the workspace config (../workspace/.workspace)
-    require('./core/grunt-validate-workspace.js')(grunt, workspacePath);
+    require('./utils/validate-workspace.js')(grunt, workspacePath);
 
     /**
      * Define grunt options
