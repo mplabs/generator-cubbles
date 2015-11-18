@@ -1,4 +1,8 @@
 # Releases:
+## Version 1.0.0
+* Supports ModelVersion-8 (only)
+    * Yeoman new generates a cubixx-project only. Scaffolding of webpackages is done via grunt-tasks to be executed within
+ the project.
 
 ## Version 0.9.1
 * Merged Branches
@@ -57,8 +61,6 @@ for modelVersion 6.0
 ## Version 0.6 (2015-08-06)
 ### Change
 * PLAT-198: default version for crc (1.1) ,crcLoader (1.1) cif (1.1) and CubxPolymer (1.1) updated. (cubixx:compound, cubixx:elementary, cubixx:webapp
-
-
 
 
 ## Version 0.5 (2015-08-04)
