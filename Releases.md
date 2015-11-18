@@ -1,8 +1,11 @@
 # Releases:
+## Version 1.0.0
+* Supports ModelVersion-8 (only)
+    * Yeoman new generates a cubixx-project only. Scaffolding of webpackages is done via grunt-tasks to be executed within
+ the project.
 
 ## Version 0.9.1
-
-* Code after merge the PLAT-200 branch to master, with formatting updates
+* Merged Branches
 
 ## Version 0.9
 * for modelVersion 7.0.0
@@ -15,8 +18,17 @@
 * BugFix formatting  tasks/config/avaiblabletasks.js cubixx:webutil, cubixx:compound , cubixx:elementary, cubixx:webapp
 
 ### Change
-* changed dev-dependency of webpackage-uploader to version 1.3.0
+* install webpackage-uploader 1.3.0
 * regex for people improved (cubixx:compound, cubixx:elementary, cubixx:webapp, cubixx:webutil (reason: article in ``App Developer Forum``:  Cubixx Web Package Generator sollte auch typische englische Autorennamen zulassen
+
+
+## Version 0.9
+
+* for modelVersion 7.0.0
+* PLAT-200
+* install webpackage-uploader 1.3.0
+* regex for people improved (cubixx:compound, cubixx:elementary, cubixx:webapp, cubixx:webutil (reason: article in ``App Developer Forum``:  Cubixx Web Package Generator sollte auch typische englische Autorennamen zulassen
+
 
 ## Version 0.8.1
 
@@ -49,8 +61,6 @@ for modelVersion 6.0
 ## Version 0.6 (2015-08-06)
 ### Change
 * PLAT-198: default version for crc (1.1) ,crcLoader (1.1) cif (1.1) and CubxPolymer (1.1) updated. (cubixx:compound, cubixx:elementary, cubixx:webapp
-
-
 
 
 ## Version 0.5 (2015-08-04)

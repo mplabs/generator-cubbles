@@ -10,12 +10,8 @@ module.exports = yeoman.generators.Base.extend({
 
         // Have Yeoman greet the user.
         this.log(yosay(
-            'Welcome to the neat ' + chalk.red('Cubixx WebPackage') +
-            ' generator!' + '\n' + 'Please specify the type of webpackage you\'d like to create:' +
-            '\n$ yo cubixx:webapp (for a Cubixx WebApplication)'+
-            '\n$ yo cubixx:compound (for a Compound Cubixx Component)'+
-            '\n$ yo cubixx:elementary (for a Elementary Cubixx Component)'+
-            '\n$ yo cubixx:webutil (\'webutil\' is also known as \'webresource\')'
+            'Welcome to the neat ' + chalk.red('Cubixx WebPackage-Project-Generator') +
+             '\nType' + '\n$ yo cubixx:project' + '\n to create a new webpackage project.'
         ));
         done();
     },
