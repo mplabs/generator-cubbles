@@ -36,14 +36,15 @@ module.exports = function(grunt) {
      */
     var activeWebpackage = grunt.file.readJSON(workspaceConfigPath).activeWebpackage;
     if (activeWebpackage && activeWebpackage.length > 0) {
-        var manifestFile = workspacePath + activeWebpackage + '/manifest.webpackage';
+        var manifestWebpackagePath = workspacePath + activeWebpackage + '/manifest.webpackage';
         // If manifestFile exist, define webpackage-related options and merge them into the default-options
-        if (grunt.file.isFile(manifestFile)) {
-            var manifestFileAsJSON = grunt.file.readJSON(manifestFile);
+        if (grunt.file.isFile(manifestWebpackagePath)) {
+            var manifestFileAsJSON = grunt.file.readJSON(manifestWebpackagePath);
             (function() {
                 // Webpackage related grunt options
                 var webpackageRelatedOptions = {
                     activeWebpackage: activeWebpackage,
+                    manifestWebpackagePath: manifestWebpackagePath,
                     manifestWebpackage: manifestFileAsJSON,
                     param: {
                         src: workspacePath + activeWebpackage,
