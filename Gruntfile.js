@@ -34,20 +34,22 @@ module.exports = function(grunt) {
     /**
      * Analyse workspace. If webpackage configured extend the options.
      */
-    var activeWebPackage = grunt.file.readJSON(workspaceConfigPath).activeWebPackage;
-    if (activeWebPackage && activeWebPackage.length > 0) {
-        var manifestFile = workspacePath + activeWebPackage + '/manifest.webpackage';
+    var activeWebpackage = grunt.file.readJSON(workspaceConfigPath).activeWebpackage;
+    if (activeWebpackage && activeWebpackage.length > 0) {
+        var manifestWebpackagePath = workspacePath + activeWebpackage + '/manifest.webpackage';
         // If manifestFile exist, define webpackage-related options and merge them into the default-options
-        if (grunt.file.isFile(manifestFile)) {
-            var manifestFileAsJSON = grunt.file.readJSON(manifestFile);
+        if (grunt.file.isFile(manifestWebpackagePath)) {
+            var manifestFileAsJSON = grunt.file.readJSON(manifestWebpackagePath);
             (function() {
                 // Webpackage related grunt options
                 var webpackageRelatedOptions = {
+                    activeWebpackage: activeWebpackage,
+                    manifestWebpackagePath: manifestWebpackagePath,
                     manifestWebpackage: manifestFileAsJSON,
                     param: {
-                        src: workspacePath + activeWebPackage,
-                        dst: workspacePath + activeWebPackage + '@' + manifestFileAsJSON.version,
-                        doc: '../docs/' + activeWebPackage
+                        src: workspacePath + activeWebpackage,
+                        dst: workspacePath + activeWebpackage + '@' + manifestFileAsJSON.version,
+                        doc: '../docs/' + activeWebpackage
                     }
                 };
                 options = _.merge(options, webpackageRelatedOptions);

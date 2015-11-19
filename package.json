@@ -60,7 +60,7 @@
     "lodash": "^3.10",
     "cubx-grunt-webpackage-scaffold": "git+https://pmt.incowia.de/webble/r/client/utilities/cubx-grunt-webpackage-scaffold.git",
     "cubx-grunt-webpackage-upload": "git+https://pmt.incowia.de/webble/r/client/utilities/cubx-grunt-webpackage-upload.git",
-    "webpackage-document-api": "git+https://pmt.incowia.de/webble/r/client/utilities/webpackage-document-api.git#modelVersion-8"
+    "webpackage-document-api": "git+https://pmt.incowia.de/webble/r/client/utilities/webpackage-document-api.git"
   },
   "repository": {
     "type": "git"
