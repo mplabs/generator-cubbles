@@ -44,7 +44,7 @@
     "lodash": "^3.10",
     "shelljs": "^0.5.3",
     "time-grunt": "~1.0.0",
-    "webpackage-document-api": "git+https://pmt.incowia.de/webble/r/client/utilities/webpackage-document-api.git"
+    "cubx-webpackage-document-api": "git+https://pmt.incowia.de/webble/r/client/utilities/cubx-webpackage-document-api.git#2.0.0"
   },
   "devDependencies": {
   },
