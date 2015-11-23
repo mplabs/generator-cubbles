@@ -1,22 +1,37 @@
+/*global process*/
 'use strict';
 var path = require('path');
-var _ = require('lodash')
+var _ = require('lodash');
 
 module.exports = function(grunt) {
-    require('./lib/cubixx.js')(grunt);
-    // Detect the workspace
+
+    /**
+     *  Load grunt tasks
+     */
+    grunt.loadTasks('tasks'); //locally defined tasks
+    require('load-grunt-tasks')(grunt, {pattern: ['grunt-*', '@*/grunt-*', 'cubx-grunt-*', '@*/cubx-grunt-*']});
+
+    /**
+     * In case of starting the default-task, ignore the rest of this file.
+     */
+    var taskFromCmd = process.argv[2];
+    if (!taskFromCmd || taskFromCmd == 'default') {
+        return;
+    }
+
+    /**
+     * Detect and validate the workspace
+     */
+
     var workspaceName = 'webpackages';
     var workspacePath = require('./lib/detect-workspace.js')(grunt, workspaceName);
     var workspaceConfigPath = path.join(workspacePath, '.workspace');
     grunt.verbose.writeln('workspacePath: ' + workspacePath);
-
-    // Validate the workspace config (../workspace/.workspace)
     require('./lib/validate-workspace.js')(grunt, workspacePath);
 
     /**
-     * Define grunt options
+     * Define default options
      */
-    // Default grunt options
     var options = {
         devtools: grunt.file.readJSON('package.json'),
         workspaceName: workspaceName,
@@ -60,16 +75,9 @@ module.exports = function(grunt) {
     }
 
     /**
-     *  Load grunt tasks
-     */
-    grunt.loadTasks('tasks'); //locally defined tasks
-    require('load-grunt-tasks')(grunt, {pattern: ['grunt-*', '@*/grunt-*', 'cubx-grunt-*', '@*/cubx-grunt-*']});
-
-    /**
      * Load config from config-files and pass options usable as config-values
      */
     var configs = require('load-grunt-configs')(grunt, options);
     grunt.initConfig(configs);
-
     //console.log(grunt.config.get('param.src'));
 };
