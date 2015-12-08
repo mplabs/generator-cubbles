@@ -1,5 +1,10 @@
 # Releases
 
+## 1.6.0
+* Support for Named-Stores
+** reference updated: cubx-grunt-webpackage-scaffold version 1.4.0
+** reference updated: cubx-grunt-webpackage-upload version 1.4.0
+
 ##1.5.0
 * reference updated: cubx-grunt-webpackage-scaffold version 1.4.0
 
@@ -24,4 +29,3 @@
 ## 1.1.0
 * included cubx-grunt-webpackage-scaffold version 1.0.0
 
-## 1.0.0 Initialversion for modelVersion 8
