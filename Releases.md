@@ -1,4 +1,18 @@
 # Releases:
+
+## Version 1.4.0
+* devtools updated (Version 1.4.0)
+
+## Version 1.3.0
+* modelVersion 8.1
+* devtools updated
+
+## Version 1.2.0
+* devtools updated
+
+## Version 1.1.0
+* included cubx-grunt-webpackage-scaffold version 1.0.0
+
 ## Version 1.0.0
 * Supports ModelVersion-8 (only)
     * Yeoman new generates a cubixx-project only. Scaffolding of webpackages is done via grunt-tasks to be executed within
