@@ -1,5 +1,8 @@
 # Releases
 
+##1.5.0
+* reference updated: cubx-grunt-webpackage-scaffold version 1.4.0
+
 ##1.4.0
 * reference updated: cubx-grunt-webpackage-scaffold version 1.3.0
 
