@@ -84,5 +84,9 @@ module.exports = yeoman.generators.Base.extend({
             'Now I\'m running grunt the first time:'
         );
         this.spawnCommandSync('grunt', [], {cwd: 'devtools'});
+
+        //PLAT-370: exit process here.
+        // Yeoman seems to have a bug processing the async-operation in 'prompting' correctly.
+        process.exit(0);
     }
 });
