@@ -1,5 +1,8 @@
 # Releases
 
+## 1.8.0
+* updatet cubx-grunt-webpackage-scaffold to version 1.6.0
+
 ## 1.7.0
 * modelVersion 8.2
 * dependencies updatet
