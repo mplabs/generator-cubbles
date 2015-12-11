@@ -1,5 +1,8 @@
 # Releases
 
+## 1.9.0
+* Webserver now uses proxy value from '.workspace' property 'remoteStoreUrl' (default 'https://webblebase.net/sandbox')
+
 ## 1.8.1
 * updatet cubx-grunt-webpackage-scaffold to version 1.6.1
 
