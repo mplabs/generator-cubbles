@@ -1,5 +1,9 @@
 # Releases
 
+## 1.8.1
+* updatet cubx-grunt-webpackage-scaffold to version 1.6.1
+
+
 ## 1.8.0
 * updatet cubx-grunt-webpackage-scaffold to version 1.6.0
 
