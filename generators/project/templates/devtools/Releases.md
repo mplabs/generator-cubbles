@@ -1,5 +1,13 @@
 # Releases
 
+## 1.10.0
+* modelVersion 8.3.0
+* dependencies updatet
+** cubx-grunt-webpackage-scaffold to version 1.7.0
+** cubx-grunt-webpackage-upload version 1.6.0
+** cubx-webpackage-document-api version 2.4.0 
+
+
 ## 1.9.1
 * updatet cubx-grunt-webpackage-scaffold to version 1.6.2
 
