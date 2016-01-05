@@ -1,5 +1,9 @@
 # Releases
 
+## 1.11.2
+
+* updated dependency cubx-grunt-webpackage-scaffold to version 1.7.4
+
 ## 1.11.1
 
 * updated dependency cubx-grunt-webpackage-scaffold to version 1.7.3
