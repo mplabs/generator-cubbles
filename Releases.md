@@ -1,5 +1,9 @@
 # Releases
 
+## 1.12.0
+
+* updated dependency: cubx-grunt-webpackage-scaffold to version v1.8.0 - PLAT-380: "+webpackage-createElementary" and "+webpackage-createCompound" generate also demo-app for the component
+
 ## 1.11.2
 
 * updated dependency cubx-grunt-webpackage-scaffold to version 1.7.4
@@ -18,18 +22,18 @@
 ## 1.10.1
 
 ### BugFix
-**  updated dependencies: 
+**  updated dependencies:
 *** cubx-grunt-webpackage-scaffold to version 1.7.1
-*** cubx-grunt-webpackage-upload version 1.6.1   
-*** cubx-webpackage-document-api version 2.4.1 
- 
+*** cubx-grunt-webpackage-upload version 1.6.1
+*** cubx-webpackage-document-api version 2.4.1
+
 
 ## 1.10.0
 * modelVersion 8.3.0
 * updated dependencies:
 ** cubx-grunt-webpackage-scaffold to version 1.7.0
 ** cubx-grunt-webpackage-upload version 1.6.0
-** cubx-webpackage-document-api version 2.4.0 
+** cubx-webpackage-document-api version 2.4.0
 
 
 ## 1.9.1
@@ -50,8 +54,8 @@
 * updated dependencies:
 ** cubx-grunt-webpackage-scaffold to version 1.5.0
 ** cubx-grunt-webpackage-upload version 1.5.0
-** cubx-webpackage-document-api version 2.3.0 
- 
+** cubx-webpackage-document-api version 2.3.0
+
 ## 1.6.0
 * Support for Named-Stores
 ** reference updated: cubx-grunt-webpackage-scaffold version 1.4.0
@@ -70,7 +74,7 @@
 ** cubx-grunt-webpackage-upload version 1.2.0
 ** cubx-webpackage-document-api version 2.2.0
 * PLAT-361: new grunt-configOptions 'activeWebpackageConfigPath', 'activeWebpackageConfig' referring to '.webpackage' -file
-* BugFix: requiered modul webpackage-document-api changed to cubx-webpackage-api 
+* BugFix: requiered modul webpackage-document-api changed to cubx-webpackage-api
 
 ## 1.2.0
 * references updated:
