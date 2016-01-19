@@ -1,10 +1,10 @@
 {
-  "name": "generator-cubixx",
+  "name": "generator-cubbles",
   "version": "1.9.5",
   "description": "Yeoman generator for Cubixx -projects.",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "https://pmt.incowia.de/webble/r/client/generator-cubixx.git",
+  "repository": "https://pmt.incowia.de/webble/r/client/generator-cubbles.git",
   "author": {
     "name": "Hd Böhlau",
     "email": "hans-dieter.boehlau@incowia.com"
