@@ -1,4 +1,4 @@
-# Yeoman generator for Cubixx-WebPackages
+# Yeoman generator for Cubbles-WebPackages
 
 
 ## Introduction
@@ -20,7 +20,7 @@ It lets you easily create and customize Cubixx (custom) web packages via the com
 ## Scaffold a Cubixx-Project
 
 1. Change into the directory the project folder should be created in.
-2. Scaffold a new Cubixx-WebPackage: `yo cubixx:project`
+2. Scaffold a new Cubixx-WebPackage: `yo cubbles:project`
 
 ## Available Generators
 * `yo cubixx`: Lists available generators.

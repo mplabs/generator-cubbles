@@ -72,7 +72,7 @@
 
 ### Change
 * install webpackage-uploader 1.3.0
-* regex for people improved (cubixx:compound, cubixx:elementary, cubixx:webapp, cubixx:webutil (reason: article in ``App Developer Forum``:  Cubixx Web Package Generator sollte auch typische englische Autorennamen zulassen
+* regex for people improved (cubixx:compound, cubixx:elementary, cubixx:webapp, cubixx:webutil (reason: article in ``App Developer Forum``:  Cubbles Web Package Generator sollte auch typische englische Autorennamen zulassen
 
 
 ## Version 0.9
@@ -80,7 +80,7 @@
 * for modelVersion 7.0.0
 * PLAT-200
 * install webpackage-uploader 1.3.0
-* regex for people improved (cubixx:compound, cubixx:elementary, cubixx:webapp, cubixx:webutil (reason: article in ``App Developer Forum``:  Cubixx Web Package Generator sollte auch typische englische Autorennamen zulassen
+* regex for people improved (cubixx:compound, cubixx:elementary, cubixx:webapp, cubixx:webutil (reason: article in ``App Developer Forum``:  Cubbles Web Package Generator sollte auch typische englische Autorennamen zulassen
 
 
 ## Version 0.8.1
