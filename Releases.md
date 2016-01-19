@@ -1,5 +1,8 @@
 # Releases:
 
+## Version 1.10.1
+* devtools updated (Version 1.12.1)
+
 ## Version 1.10.0
 * devtools updated (Version 1.12.0)
 
