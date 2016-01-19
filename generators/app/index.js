@@ -11,7 +11,7 @@ module.exports = yeoman.generators.Base.extend({
         // Have Yeoman greet the user.
         this.log(yosay(
             'Welcome to the neat ' + chalk.red('Cubbles WebPackage-Project-Generator') +
-             '\nType' + '\n$ yo cubixx:project' + '\n to create a new cubixx-project.'
+             '\nType' + '\n$ yo cubbles:project' + '\n to create a new cubbles-project.'
         ));
         done();
     },

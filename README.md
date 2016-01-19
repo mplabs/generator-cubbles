@@ -3,10 +3,10 @@
 
 ## Introduction
 The generators provide a scaffolding using [Yeoman](http://yeoman.io) (a scaffolding tool for the web).
-It lets you easily create and customize Cubixx (custom) web packages via the command line. This saves you time writing boilerplate code so you can start writing up the logic to your components straight away.
+It lets you easily create and customize Cubbles (custom) web packages via the command line. This saves you time writing boilerplate code so you can start writing up the logic to your components straight away.
 
 ## Features
-* Scaffolding Cubixx-WebPackages
+* Scaffolding Cubbles-WebPackages
 * Prompting for the most important config-values
 * Validation of user input values.
 
@@ -14,17 +14,17 @@ It lets you easily create and customize Cubixx (custom) web packages via the com
 ## Installation
 
 1. The Yeoman package. Install it if it is not already on your system: `npm install -g yo`
-2. Install the Yeoman generator for Cubixx-WebPackages: `npm install -g https://npm.webblebase.net:444/generator-cubixx/-/generator-cubixx-<version>.tgz`
+2. Install the Yeoman generator for Cubbles-WebPackages: `npm install -g https://npm.webblebase.net:444/generator-cubbles/-/generator-cubbles-<version>.tgz`
 
 
-## Scaffold a Cubixx-Project
+## Scaffold a Cubbles-Project
 
 1. Change into the directory the project folder should be created in.
-2. Scaffold a new Cubixx-WebPackage: `yo cubbles:project`
+2. Scaffold a new Cubbles-WebPackage: `yo cubbles:project`
 
 ## Available Generators
-* `yo cubixx`: Lists available generators.
-* `yo cubixx:project`: Sets up a new Cubixx-Project.
+* `yo cubbles`: Lists available generators.
+* `yo cubbles:project`: Sets up a new Cubbles-Project.
 
 ## Use the DevTools
 The generated project comes with the **Coder-Development-Tools (DevTools)**.
