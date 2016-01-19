@@ -1,5 +1,8 @@
 # Releases:
 
+## Version 1.10.3
+* devtools updated (Version 1.12.2)
+
 ## Version 1.10.2
 * "cubixx" changed to "cubbles"
 
