@@ -5,11 +5,11 @@ var chalk = require('chalk');
 
 module.exports = function(grunt) {
     grunt.registerTask('default', [], function() {
-        require('../lib/cubixx.js')(grunt);
+        require('../lib/cubbles.js')(grunt);
         /**
-         * Show Top-Level Cubixx-Tasks.
+         * Show Top-Level Cubbles-Tasks.
          */
-        grunt.log.writeln('\n' + chalk.underline.bold('Available Cubixx-Tasks:'));
+        grunt.log.writeln('\n' + chalk.underline.bold('Available Cubbles-Tasks:'));
         var tasks = grunt.task._tasks;
         var cubxTasks = [];
         Object.keys(tasks).forEach(function(tasksName) {
