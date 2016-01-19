@@ -4,12 +4,12 @@
 'use strict';
 var sh = require('shelljs');
 /**
- * This task prepares your project to map-in the 'cubixx-coder-devtools'
+ * This task prepares your project to map-in the 'cubbles-coder-devtools'
  * @param {object} grunt
  */
 module.exports = function(grunt) {
     grunt.registerTask('prepare-cubx.devtools-asGitSubtree',
-        'prepare to map-in \'cubixx-coder-devtools\' from git via \'git subtree\'', function() {
+        'prepare to map-in \'cubbles-coder-devtools\' from git via \'git subtree\'', function() {
             var workDirectory = sh.pwd();
             // check if git is installed
             if (!sh.which('git')) {
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
             var subtreesFileContent = {
                 'devtools': {
                     'localFolder': 'devtools-mappedIn',
-                    'repository': 'https://pmt.incowia.de/webble/r/client/cubixx-coder-devtools.git',
+                    'repository': 'https://pmt.incowia.de/webble/r/client/cubbles-coder-devtools.git',
                     'branch': 'master'
                 }
             };
