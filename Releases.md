@@ -1,5 +1,7 @@
 # Releases
 
+## 1.12.1
+* rwpaired cubbles logo
 ## 1.12.0
 
 * updated dependency: cubx-grunt-webpackage-scaffold to version v1.8.0 - PLAT-380: "+webpackage-createElementary" and "+webpackage-createCompound" generate also demo-app for the component
