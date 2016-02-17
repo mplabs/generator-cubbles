@@ -1,5 +1,9 @@
 # Releases:
 
+## Version 1.11.0
+* devtools updated (Version 1.13.0)
+* use cubx.core.rte@1.4.0
+
 ## Version 1.10.3
 * devtools updated (Version 1.12.2)
 
