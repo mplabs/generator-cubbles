@@ -12,12 +12,14 @@ module.exports = function(grunt) {
         };
         var onValidationError = function(errors) {
             errors.forEach(function(error) {
-                grunt.log.writeln('Validation Error: ' + error.dataPath + ' >>> ' + error.message);
+                if(error.dataPath && error.message) {
+                    // schema validation failed
+                    grunt.log.writeln('Validation Error: ' + error.dataPath + ' >>> ' + error.message);
+                } else {
+                    // rule violation
+                    grunt.log.writeln(error);
+                }
             });
-            //for (var i = 0; i < errors.length; i++) {
-            //    grunt.log.writeln(errors[i]);
-            //}
-            //grunt.log.writeln(error);
             grunt.fail.fatal('Validation failed.');
         };
         doc.validate(onSuccess, onUnsupportedModelVersionError, onValidationError);
