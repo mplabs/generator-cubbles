@@ -1,5 +1,8 @@
 # Releases
 
+## 1.13.0
+updated dependency: cubx-grunt-webpackage-scaffold to version v1.9.0 - use rte@1.4.0
+
 ## 1.12.2
 * changed grunt task config (client jscs file)
 
