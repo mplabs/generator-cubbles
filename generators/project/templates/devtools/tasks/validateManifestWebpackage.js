@@ -1,3 +1,4 @@
+/* globals module,require*/
 module.exports = function(grunt) {
     'use strict';
     grunt.registerTask('+webpackage-validateManifestFile', 'Validate \'manifest.webpackage\' file.', function() {
@@ -12,7 +13,7 @@ module.exports = function(grunt) {
         };
         var onValidationError = function(errors) {
             errors.forEach(function(error) {
-                if(error.dataPath && error.message) {
+                if (error.dataPath && error.message) {
                     // schema validation failed
                     grunt.log.writeln('Validation Error: ' + error.dataPath + ' >>> ' + error.message);
                 } else {
