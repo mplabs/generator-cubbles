@@ -1,4 +1,10 @@
 # Releases
+## 2.0.1
+### Bugfix
+* corrected reference to cubx-webpackage-document-api
+* updated dependencies:
+    * cubx-grunt-webpackage-scaffold to version v2.0.1
+    
 ## 2.0.0
 * PLAT-129/PLAT-396:
 	* use cubx-webpackage-upload version 3.1.x
