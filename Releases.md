@@ -1,5 +1,12 @@
 # Releases:
 
+## Version 2.0.0
+ * PLAT-129/PLAT-396:
+    * cubx-webpackage-upload automatically asks for commandline input of user and password-values.
+    * use devtools v2.0.0
+ * use cubx-grunt-webpackage-scaffold to version v2.0.0
+    * use cubx.core.rte@1.5.0
+
 ## Version 1.11.0
 * devtools updated (Version 1.13.0)
 * use cubx.core.rte@1.4.0
