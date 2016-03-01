@@ -1,5 +1,8 @@
 # Releases:
 
+## Version 2.0.1
+* use cubbles-coder-devtools version "devtools-2.0.1"
+
 ## Version 2.0.0
  * PLAT-129/PLAT-396:
     * cubx-webpackage-upload automatically asks for commandline input of user and password-values.
