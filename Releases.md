@@ -1,8 +1,10 @@
 # Releases
 
-## next release
-* PLAT-397: correkt of ".workspace" in more cases of 	incompleteness
-
+## 2.3.0
+  * PLAT-397: correct ".workspace" for more cases of incompleteness
+  * PLAT-340:
+    * updated dependency: cubx-grunt-webpackage-scaffold to version v2.3.0
+    
 ## 2.2.0
 * updated dependency: cubx-grunt-webpackage-scaffold to version v2.2.0
 
