@@ -1,5 +1,7 @@
 # Releases:
 
+## Version 2.3.0
+* use cubbles-coder-devtools version "devtools-2.3.0"
 
 ## Version 2.2.0
 * use cubbles-coder-devtools version "devtools-2.2.0"
